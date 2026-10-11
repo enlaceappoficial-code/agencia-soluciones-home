@@ -133,14 +133,33 @@ const productosData = [
       </svg>
     ),
     mockup: (
-      <div className="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-80 transition-opacity duration-500 scale-95 group-hover:scale-100">
-        <div className="w-[85%] h-[75%] border-2 border-blue-500/30 rounded-lg bg-[#071324] flex flex-col p-3 gap-3 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-2">
-            <div className="w-6 h-6 rounded-full bg-blue-500/50"></div>
-            <div className="w-1/3 h-2 bg-blue-500/30 rounded-full"></div>
+      <div className="absolute inset-0 overflow-hidden flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center gap-3.5 px-4 pt-3">
+          {/* Móvil 1: Feed / Inicio */}
+          <div className="relative w-[125px] sm:w-[135px] h-[185px] rounded-xl overflow-hidden border border-white/15 shadow-[0_12px_28px_rgba(0,0,0,0.7)] transform -rotate-3 -translate-y-1 group-hover:rotate-0 group-hover:translate-y-0 group-hover:scale-105 transition-all duration-500">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/ecosistema/red-social-feed.jpg"
+              alt="Red Social ENLACE — Feed"
+              className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061224]/80 via-transparent to-transparent pointer-events-none" />
           </div>
-          <div className="flex-1 w-full bg-blue-500/10 rounded-md border border-blue-500/20"></div>
+
+          {/* Móvil 2: Directorio de Emprendedores */}
+          <div className="relative w-[125px] sm:w-[135px] h-[185px] rounded-xl overflow-hidden border border-blue-500/35 shadow-[0_12px_30px_rgba(37,99,235,0.3)] transform rotate-3 translate-y-1.5 group-hover:rotate-0 group-hover:translate-y-0 group-hover:scale-105 transition-all duration-500">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/ecosistema/red-social-directorio.jpg"
+              alt="Red Social ENLACE — Directorio"
+              className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061224]/80 via-transparent to-transparent pointer-events-none" />
+          </div>
         </div>
+
+        {/* Degradado inferior para fundir con la tarjeta */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061224] via-transparent to-black/20 pointer-events-none z-10" />
       </div>
     )
   },
