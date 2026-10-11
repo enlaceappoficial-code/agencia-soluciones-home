@@ -109,15 +109,14 @@ const productosData = [
       </svg>
     ),
     mockup: (
-      <div className="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-80 transition-opacity duration-500 scale-95 group-hover:scale-100">
-        <div className="w-2/3 h-[90%] border-2 border-emerald-500/30 rounded-3xl bg-[#071324] flex flex-col p-3 gap-3 shadow-[0_0_20px_rgba(16,185,129,0.2)] mt-6">
-          <div className="w-1/2 h-2 bg-emerald-500/50 rounded-full mx-auto mb-2"></div>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="h-10 bg-emerald-500/20 rounded-lg border border-emerald-500/20"></div>
-            <div className="h-10 bg-white/5 rounded-lg border border-white/10"></div>
-          </div>
-          <div className="flex-1 w-full bg-emerald-500/10 rounded-lg border border-emerald-500/20"></div>
-        </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ecosistema/barberia-dashboard.png"
+          alt="Enlace Barbería Pro — Dashboard"
+          className="w-full h-full object-cover object-left-top opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061224] via-[#061224]/20 to-black/30 pointer-events-none" />
       </div>
     )
   },
