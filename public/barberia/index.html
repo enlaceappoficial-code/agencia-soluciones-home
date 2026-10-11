@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ENLACE Peluquería — Gestión y Reservas Online</title>
+<meta name="description" content="Sistema de reservas online y control técnico para barberías y salones de belleza en Chile. Agenda, clientes y métricas en un solo lugar."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#071A3A;
+  --navy2:#0B2F6B;
+  --blue:#2563EB;
+  --glow:#3B82F6;
+  --orange:#F5A020;
+  --white:#F1F5F9;
+  --muted:#64748B;
+  --card:#0D2550;
+  --border:#1E3A6E;
+  --navH:64px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+section{scroll-margin-top:calc(var(--navH) + 16px)}
+
+html.embed{--navH:0px}
+html.embed nav,html.embed .tools-module{display:none!important}
+html.embed section{scroll-margin-top:16px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:var(--navH);display:flex;justify-content:space-between;align-items:center;background:rgba(7,26,58,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:1px}
+.nav-brand span:first-child{color:var(--glow)}
+.nav-brand span:last-child{color:var(--orange)}
+.nav-download{background:var(--orange);color:var(--navy);padding:10px 20px;border-radius:14px;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;transition:opacity .2s,transform .2s;box-shadow:0 10px 26px rgba(245,160,32,.25)}
+.nav-download:hover{opacity:.9}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#0B2F6B 0%,var(--navy) 70%)}
+.hero-orb1{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.15) 0%,transparent 70%);top:-100px;left:-100px}
+.hero-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,160,32,.1) 0%,transparent 70%);bottom:-50px;right:-50px}
+.hero-content{position:relative;z-index:1;width:100%;max-width:900px;display:flex;flex-direction:column;align-items:center}
+.hero-logo{width:140px;max-width:70vw;height:auto;object-fit:contain;margin-bottom:14px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,160,32,.15);border:1px solid rgba(245,160,32,.3);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:500;color:var(--orange);margin-bottom:32px}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--glow);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(36px,7vw,64px);line-height:1.1;margin-bottom:24px;text-align:center;width:100%}
+.hero-line{display:block;text-align:center;width:100%}
+.hero-line.blue{color:var(--glow)}
+.hero-line.orange{color:var(--orange)}
+.hero-sub{font-size:18px;color:#94A3B8;line-height:1.7;max-width:520px;margin:0 auto 40px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:white;padding:16px 28px;border-radius:14px;text-decoration:none;font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,.4)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:16px 28px;border-radius:14px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--border);transition:border-color .2s}
+.btn-secondary:hover{border-color:var(--glow)}
+
+/* STATS */
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:60px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;color:var(--white)}
+.stat-label{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* SECTIONS */
+section{padding:80px 24px}
+.container{max-width:1100px;margin:0 auto}
+.section-tag{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);margin-bottom:16px}
+.section-sub{font-size:16px;color:#94A3B8;line-height:1.7;max-width:560px}
+
+/* QUE ES */
+.what{background:var(--navy)}
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:60px}
+.what-cards{display:flex;flex-direction:column;gap:16px}
+.what-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+.what-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.what-icon.blue{background:rgba(37,99,235,.15)}
+.what-icon.orange{background:rgba(245,160,32,.15)}
+.what-icon.green{background:rgba(22,163,74,.15)}
+.what-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:4px}
+.what-card p{font-size:13px;color:#94A3B8;line-height:1.6}
+.what-visual{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px}
+.phone-mock{background:var(--navy);border-radius:16px;padding:16px;border:1px solid var(--border)}
+.mock-header{display:flex;align-items:center;gap:8px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+.mock-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:14px}
+.mock-logo span{color:var(--orange)}
+.mock-post{background:var(--card);border-radius:10px;padding:12px;margin-bottom:8px;border:1px solid var(--border)}
+.mock-tag{display:inline-block;background:rgba(245,160,32,.2);color:var(--orange);font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;margin-bottom:6px}
+.mock-post h4{font-size:12px;font-weight:600;margin-bottom:3px}
+.mock-post p{font-size:11px;color:#64748B}
+.mock-avail{display:flex;align-items:center;gap:6px;margin-top:8px}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:#16A34A}
+.mock-post .avail-text{font-size:10px;color:#16A34A}
+
+/* DIGITALIZA / CTA */
+.digital{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.digital-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.digital-features{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.digital-feat{display:flex;gap:14px;align-items:flex-start}
+.feat-icon{width:36px;height:36px;border-radius:10px;background:rgba(37,99,235,.15);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.feat-icon.orange{background:rgba(245,160,32,.15)}
+.digital-feat h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.digital-feat p{font-size:13px;color:#94A3B8}
+.digital-cta{background:var(--navy);border:1px solid var(--border);border-radius:20px;padding:32px;text-align:center}
+.digital-cta h3{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;margin-bottom:12px}
+.digital-cta p{font-size:14px;color:#94A3B8;line-height:1.7;margin-bottom:24px}
+.whatsapp-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;transition:opacity .2s}
+.whatsapp-btn:hover{opacity:.85}
+
+/* FOOTER */
+footer{background:#040F24;border-top:1px solid var(--border);padding:48px 24px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-brand p{font-size:13px;color:#475569;line-height:1.7;margin-top:4px}
+
+/* PLANES */
+.pricing{background:var(--navy);border-top:1px solid var(--border)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px}
+.switch input:checked + .slider {background-color: var(--glow);}
+.switch .slider:before {position: absolute;content: "";height: 16px;width: 16px;left: 3px;bottom: 3px;background-color: white;border-radius: 50%;transition: .4s;}
+.switch input:checked + .slider:before {transform: translateX(26px);}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px 30px;display:flex;flex-direction:column;position:relative}
+.plan-card.pro{border-color:var(--glow);box-shadow:0 0 40px rgba(37,99,235,.15);transform:scale(1.05);z-index:2}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--glow);color:white;font-size:12px;font-weight:700;padding:4px 16px;border-radius:100px;letter-spacing:1px}
+.plan-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px}
+.plan-price{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;margin-bottom:8px}
+.plan-price span{font-size:16px;font-weight:500;color:var(--muted)}
+.plan-desc{font-size:14px;color:var(--muted);margin-bottom:30px;line-height:1.6}
+.plan-features{list-style:none;margin-bottom:40px;flex-grow:1}
+.plan-features li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#cbd5e1;margin-bottom:16px;line-height:1.5}
+.plan-features li::before{content:'✓';color:var(--glow);font-weight:bold}
+.plan-card.pro .plan-features li::before{color:var(--orange)}
+.plan-btn{display:block;text-align:center;padding:14px;border-radius:12px;font-weight:700;text-decoration:none;transition:all .2s}
+.plan-btn-outline{background:transparent;color:var(--white);border:1px solid var(--border)}
+.plan-btn-outline:hover{background:rgba(255,255,255,.05)}
+.plan-btn-solid{background:var(--glow);color:white}
+.plan-btn-solid:hover{background:#2563EB;transform:translateY(-2px)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .what-grid,.digital-inner{grid-template-columns:1fr}
+  .what-visual{display:none}
+  .hero-stats{gap:24px}
+  .plan-card.pro{transform:none}
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{animation:fadeUp .6s ease both}
+.hero h1{animation:fadeUp .6s .1s ease both}
+.hero-sub{animation:fadeUp .6s .2s ease both}
+.hero-btns{animation:fadeUp .6s .3s ease both}
+.hero-stats{animation:fadeUp .6s .4s ease both}
+</style>
+</head>
+<body>
+
+<script>
+  (() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("embed") === "1" || window.self !== window.top) {
+      document.documentElement.classList.add("embed");
+    }
+  })();
+</script>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-logo" href="#top" aria-label="ENLACE Peluquería">
+      <div class="nav-logo-icon">E</div>
+      <div class="nav-brand"><span>ENLA</span><span>CE</span></div>
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <div class="mode-bar" role="tablist" aria-label="Navegación por pestañas">
+      <button class="mode-pill mode-pill--tools" type="button" role="tab" id="mode-tab-tools" aria-selected="true" aria-expanded="false" tabindex="0">
+        <span class="mode-pill-icon" aria-hidden="true">💈</span>
+        <span class="mode-pill-label">Herramientas</span>
+        <span class="mode-pill-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <a href="https://barberia.redenlace.cl" target="_blank" class="nav-download">Acceder al Panel</a>
+  </div>
+</nav>
+
+<div class="tools-module" role="region" aria-label="Herramientas" hidden>
+  <div class="tools-tabs" role="tablist" aria-label="Categorías de herramientas">
+    <button class="tools-tab" type="button" role="tab" id="toolcat-barberia" aria-selected="true" aria-controls="toolcat-panel-barberia" tabindex="0">
+      <span class="tools-tab-icon" aria-hidden="true">💈</span>
+      <span class="tools-tab-label">Barbería</span>
+    </button>
+    <button class="tools-tab" type="button" role="tab" id="toolcat-gestion" aria-selected="false" aria-controls="toolcat-panel-gestion" tabindex="-1">
+      <span class="tools-tab-icon" aria-hidden="true">📊</span>
+      <span class="tools-tab-label">Gestión</span>
+    </button>
+  </div>
+
+  <div class="tools-panels">
+    <div class="tools-panel" role="tabpanel" id="toolcat-panel-barberia" aria-labelledby="toolcat-barberia">
+      <div class="tools-row" aria-label="Herramientas de barbería">
+        <a class="tool-chip" href="https://barberia.redenlace.cl" target="_blank"><span class="tool-chip-icon" aria-hidden="true">📅</span>Panel de Reservas</a>
+        <a class="tool-chip" href="https://wa.me/56941278725?text=Hola!%20Me%20interesa%20activar%20el%20sistema%20de%20Barberia%20para%20mi%20negocio." target="_blank"><span class="tool-chip-icon" aria-hidden="true">💬</span>Soporte WhatsApp</a>
+        <a class="tool-chip" href="https://redenlace.cl" target="_blank"><span class="tool-chip-icon" aria-hidden="true">🏠</span>Volver a ENLACE</a>
+      </div>
+      <div class="tools-hint">Accede rápidamente a las herramientas de tu barbería.</div>
+    </div>
+    <div class="tools-panel" role="tabpanel" id="toolcat-panel-gestion" aria-labelledby="toolcat-gestion" hidden>
+      <div class="tools-row" aria-label="Herramientas de gestión">
+        <a class="tool-chip" href="https://redenlace.cl/peluqueria#planes" target="_blank"><span class="tool-chip-icon" aria-hidden="true">💇</span>ENLACE Peluquería</a>
+        <a class="tool-chip" href="https://redenlace.cl/agenda" target="_blank"><span class="tool-chip-icon" aria-hidden="true">📅</span>Agenda Pro</a>
+        <a class="tool-chip" href="https://redenlace.cl/gestion" target="_blank"><span class="tool-chip-icon" aria-hidden="true">📦</span>Gestión</a>
+      </div>
+      <div class="tools-hint">Explora otras herramientas del ecosistema ENLACE.</div>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src="logo-barberia.png" alt="Enlace Barbería Pro" />
+    <div class="hero-badge">
+      <span class="hero-badge-dot" style="background:#25D366"></span>
+      <span style="color:#25D366">Ahora con Recordatorios Automáticos por WhatsApp</span>
+    </div>
+    <h1>
+      <span class="hero-line">El control total de</span>
+      <span class="hero-line orange">tu Barbería</span>
+      <span class="hero-line">en un solo</span>
+      <span class="hero-line blue">Panel Inteligente</span>
+    </h1>
+    <p class="hero-sub">
+      Gestiona múltiples agendas, calcula tu ganancia neta, personaliza tu marca y olvídate de las inasistencias gracias a los cobros de señas integrados.
+    </p>
+    <div class="hero-btns">
+      <a href="https://barberia.redenlace.cl" class="btn-primary">
+        🎁 Empezar 1 Mes Gratis
+      </a>
+      <a href="#caracteristicas" class="btn-secondary">
+        Descubrir Funciones →
+      </a>
+    </div>
+    <p style="margin-top:14px;font-size:12px;color:#64748B;line-height:1.6;text-align:center">
+      Sin tarjeta de crédito. Acceso instantáneo desde tu navegador, sin descargas.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">App</div>
+        <div class="stat-label">Instalable (PWA)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0%</div>
+        <div class="stat-label">Comisiones por Cita</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Marca Propia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="what" id="caracteristicas">
+  <div class="container">
+    <div class="what-grid">
+      <div>
+        <p class="section-tag">Herramientas Pro</p>
+        <h2 class="section-title">Diseñado para la<br/>gestión moderna</h2>
+        <p class="section-sub">Automatiza las reservas de tus sillones y mantén el historial de tus clientes sin planillas complicadas.</p>
+        <div class="what-cards" style="margin-top:32px">
+          <div class="what-card">
+            <div class="what-icon blue">🎨</div>
+            <div>
+              <h3>Personalización (White-Label)</h3>
+              <p>Tu propio logo y nombre comercial en la app. Tus clientes interactúan directamente con tu marca, no con la nuestra.</p>
+            </div>
+          </div>
+          <div class="what-card">
+            <div class="what-icon orange">👥</div>
+            <div>
+              <h3>Gestión Multi-Barbero</h3>
+              <p>Agendas independientes para cada barbero de tu equipo bajo un mismo local, sin cruces ni confusiones de horario.</p>
+            </div>
+          </div>
+          <div class="what-card">
+            <div class="what-icon green" style="background:rgba(37,211,102,.15);color:#25D366">💬</div>
+            <div>
+              <h3>Integración con WhatsApp</h3>
+              <p>Botones mágicos para enviar recordatorios personalizados de la próxima cita con un solo toque y evitar el 'no-show'.</p>
+            </div>
+          </div>
+          <div class="what-card">
+            <div class="what-icon" style="background:rgba(168,85,247,.15);color:#A855F7">📈</div>
+            <div>
+              <h3>Finanzas y Rentabilidad Exacta</h3>
+              <p>Métricas avanzadas: ingresos extras, control de gastos fijos y cálculo automático de tu ganancia neta mensual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="what-visual">
+        <div class="phone-mock">
+          <div class="mock-header">
+            <div class="mock-logo"><span>💈 ENLACE Barber Panel</span></div>
+          </div>
+          <div class="mock-post">
+            <div class="mock-tag">Reserva Confirmada — 15:30 hrs</div>
+            <h4>Juan Pérez — Corte + Barba</h4>
+            <p>Atendido por: Barbero Central</p>
+            <div class="mock-avail">
+              <div class="avail-dot"></div>
+              <span class="avail-text" style="color:var(--orange)">💳 Seña pagada: $5.000 (Comprobante ✓)</span>
+            </div>
+          </div>
+          <div class="mock-post">
+            <div class="mock-tag" style="background:rgba(37,99,235,.2);color:var(--glow)">Próxima Cita — 16:30 hrs</div>
+            <h4>Carlos Muñoz — Degradado Alto</h4>
+            <p>Atendido por: Felipe Fade</p>
+            <div class="mock-avail">
+              <div class="avail-dot" style="background:#25D366"></div>
+              <span class="avail-text" style="color:#25D366">💬 Recordatorio WhatsApp enviado</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:#475569;text-align:center">Monitorea tus citas desde cualquier smartphone</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="planes">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
+      <p class="section-tag">Suscripciones</p>
+      <h2 class="section-title">Elige el plan ideal para tu negocio</h2>
+      <p class="section-sub" style="margin: 0 auto;">Sin comisiones por cita. Pagas una cuota fija mensual y todo el control y los ingresos son tuyos.</p>
+      
+      <!-- TOGGLE -->
+      <div style="display:flex; justify-content:center; gap:15px; margin-top:24px; align-items:center;">
+        <span id="label-semestral" style="font-weight:700; color:var(--white); font-size:14px;">Semestral</span>
+        <label class="switch" style="position:relative; display:inline-block; width:50px; height:24px;">
+          <input type="checkbox" id="pricing-toggle" style="opacity:0; width:0; height:0;">
+          <span class="slider" style="position:absolute; cursor:pointer; inset:0; background:var(--card); border:1px solid var(--border); border-radius:34px; transition:.4s;"></span>
+        </label>
+        <span id="label-anual" style="font-weight:700; color:var(--muted); font-size:14px;">Anual (¡Mejor valor!)</span>
+      </div>
+    </div>
+    
+    <div class="pricing-grid">
+      <!-- BÁSICO -->
+      <div class="plan-card">
+        <h3 class="plan-name">Básico</h3>
+        <div class="plan-price" id="price-basico">$29.990 <span>/semestre</span></div>
+        <p style="font-size: 12px; color: var(--muted);" id="mes-basico">Equivale a $5.000/mes</p>
+        <p class="plan-desc">Perfecto para barberos independientes que recién comienzan a digitalizarse.</p>
+        <p style="font-size: 11px; color: var(--glow); font-weight: 700; margin-top: 5px; background: rgba(37, 99, 235, 0.1); padding: 6px; border-radius: 8px;">🎁 Prueba el sistema completo GRATIS por 1 mes (30 días) creando tu cuenta ahora.</p>
+        <ul class="plan-features">
+          <li>1 Barbero / Agenda única</li>
+          <li>Reservas online 24/7 ilimitadas</li>
+          <li>Ficha técnica de clientes</li>
+          <li>Ingresos y cierre de caja</li>
+          <li>Link de reservas estándar</li>
+        </ul>
+        <a href="#digitaliza" class="plan-btn plan-btn-outline">Solicitar Plan por WhatsApp</a>
+      </div>
+
+      <!-- PLUS -->
+      <div class="plan-card">
+        <h3 class="plan-name">Plus</h3>
+        <div class="plan-price" id="price-plus">$45.990 <span>/semestre</span></div>
+        <p style="font-size: 12px; color: var(--muted);" id="mes-plus">Equivale a $7.665/mes</p>
+        <p class="plan-desc">Ideal para locales en crecimiento con múltiples sillones.</p>
+        <ul class="plan-features">
+          <li>Hasta 3 Barberos (Multi-agenda)</li>
+          <li>Recordatorios por WhatsApp (1 clic)</li>
+          <li>Re-agendamiento rápido (14 días)</li>
+          <li>Personalización Básica</li>
+          <li>Todo lo del plan Básico</li>
+        </ul>
+        <a href="#digitaliza" class="plan-btn plan-btn-outline">Solicitar Plan por WhatsApp</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan-card pro">
+        <div class="plan-badge">MÁS POPULAR</div>
+        <h3 class="plan-name">Pro</h3>
+        <div class="plan-price" id="price-pro">$85.990 <span>/semestre</span></div>
+        <p style="font-size: 12px; color: var(--muted);" id="mes-pro">Equivale a $14.331/mes</p>
+        <p class="plan-desc">La experiencia definitiva. Control total y marca propia (White-Label).</p>
+        <ul class="plan-features">
+          <li>Barberos Ilimitados</li>
+          <li>Marca Propia (Tu Logo y Nombre)</li>
+          <li>Cobro de Señas / Anti No-Show</li>
+          <li>Cálculo de Rentabilidad y Gastos</li>
+          <li>Estadísticas avanzadas y Reportes</li>
+          <li>Soporte técnico prioritario</li>
+        </ul>
+        <a href="#digitaliza" class="plan-btn plan-btn-solid">Solicitar Plan por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="digital" id="digitaliza">
+  <div class="container">
+    <div class="digital-inner">
+      <div>
+        <p class="section-tag">Soporte Local</p>
+        <h2 class="section-title">Te ayudamos a configurar tu Barbería en la red</h2>
+        <p class="section-sub">Digitalizar tus herramientas de trabajo es fácil si lo hacemos juntos paso a paso.</p>
+        <div class="digital-features">
+          <div class="digital-feat">
+            <div class="feat-icon">⚡</div>
+            <div>
+              <h4>Activación Inmediata</h4>
+              <p>Tu subdominio listo para recibir reservas en minutos sin esperas técnicas.</p>
+            </div>
+          </div>
+          <div class="digital-feat">
+            <div class="feat-icon orange">🔒</div>
+            <div>
+              <h4>Datos Protegidos</h4>
+              <p>Toda la información del negocio se procesa de forma directa, encriptada y sin intermediarios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="digital-cta">
+        <h3>¿Tienes dudas sobre el sistema?</h3>
+        <p>Conversemos directamente por WhatsApp para asistirte con la integración del panel técnico de tu negocio.</p>
+        <a href="https://wa.me/56941278725?text=Hola!%20Me%20interesa%20activar%20el%20sistema%20de%20Barberia%20para%20mi%20negocio." target="_blank" class="whatsapp-btn">
+          💬 Contactar Soporte Técnico
+        </a>
+        <p style="font-size:12px;color:#334155;margin-top:16px">La Serena / Coquimbo · ENLACE Herramientas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-brand" style="font-size:24px"><span>ENLA</span><span>CE</span></div>
+      <p>Módulo de software profesional para salones de barbería independientes.</p>
+    </div>
+    <div class="footer-brand" style="text-align: right;">
+      <p style="font-size:12px;color:#475569">© 2026 ENLACE · Bajo Deslinde SPA · IV Región, Chile</p>
+      <p style="color:#334155; font-size: 12px;">barberia.redenlace.cl</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    const moduleEl = document.querySelector(".tools-module");
+    const toolsTab = document.getElementById("mode-tab-tools");
+    if (!moduleEl || !toolsTab) return;
+
+    const catTabs = Array.from(moduleEl.querySelectorAll('[role="tab"][id^="toolcat-"]'));
+    const catPanels = new Map(
+      catTabs.map((t) => [t.id, document.getElementById(t.getAttribute("aria-controls") || "")]).filter(([, p]) => p)
+    );
+
+    const setActiveCategory = (tab, focus) => {
+      for (const t of catTabs) {
+        const isActive = t === tab;
+        t.setAttribute("aria-selected", String(isActive));
+        t.tabIndex = isActive ? 0 : -1;
+        const panel = catPanels.get(t.id);
+        if (panel) panel.hidden = !isActive;
+      }
+      if (focus) tab.focus({ preventScroll: true });
+    };
+
+    const catActive = catTabs.find((t) => t.getAttribute("aria-selected") === "true") || catTabs[0];
+    if (catActive) setActiveCategory(catActive, false);
+
+    const closeTools = () => {
+      moduleEl.hidden = true;
+      toolsTab.setAttribute("aria-selected", "false");
+      toolsTab.setAttribute("aria-expanded", "false");
+      toolsTab.tabIndex = -1;
+    };
+
+    const openTools = () => {
+      moduleEl.hidden = false;
+      toolsTab.setAttribute("aria-selected", "true");
+      toolsTab.setAttribute("aria-expanded", "true");
+      toolsTab.tabIndex = 0;
+    };
+
+    closeTools();
+
+    toolsTab.addEventListener("click", () => {
+      const isOpen = !moduleEl.hidden;
+      if (isOpen) closeTools();
+      else openTools();
+    });
+
+    toolsTab.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        const idx = catTabs.length;
+        setActiveCategory(catTabs[0], true);
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        setActiveCategory(catTabs[catTabs.length - 1], true);
+      }
+    });
+
+    catTabs.forEach((tab) => {
+      tab.addEventListener("click", () => setActiveCategory(tab, true));
+      tab.addEventListener("keydown", (e) => {
+        const idx = catTabs.indexOf(tab);
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          setActiveCategory(catTabs[(idx + 1) % catTabs.length], true);
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          setActiveCategory(catTabs[(idx - 1 + catTabs.length) % catTabs.length], true);
+        } else if (e.key === "Home") {
+          e.preventDefault();
+          setActiveCategory(catTabs[0], true);
+        } else if (e.key === "End") {
+          e.preventDefault();
+          setActiveCategory(catTabs[catTabs.length - 1], true);
+        }
+      });
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeTools();
+    });
+
+    window.addEventListener("pointerdown", (e) => {
+      if (moduleEl.hidden) return;
+      if (moduleEl.contains(e.target)) return;
+      if (toolsTab && toolsTab.contains(e.target)) return;
+      closeTools();
+    });
+  })();
+
+  const toggle = document.getElementById('pricing-toggle');
+  const labelSemestral = document.getElementById('label-semestral');
+  const labelAnual = document.getElementById('label-anual');
+
+  const prices = {
+    basico: { semestral: '$29.990', anual: '$49.990', mesSemestral: '$5.000', mesAnual: '$4.166' },
+    plus: { semestral: '$45.990', anual: '$79.990', mesSemestral: '$7.665', mesAnual: '$6.665' },
+    pro: { semestral: '$85.990', anual: '$149.990', mesSemestral: '$14.331', mesAnual: '$12.499' }
+  };
+
+  toggle.addEventListener('change', () => {
+    const isAnual = toggle.checked;
+
+    if (isAnual) {
+      labelSemestral.style.color = 'var(--muted)';
+      labelAnual.style.color = 'var(--white)';
+
+      document.getElementById('price-basico').innerHTML = `${prices.basico.anual} <span>/año</span>`;
+      document.getElementById('price-plus').innerHTML = `${prices.plus.anual} <span>/año</span>`;
+      document.getElementById('price-pro').innerHTML = `${prices.pro.anual} <span>/año</span>`;
+
+      document.getElementById('mes-basico').innerHTML = `Equivale a ${prices.basico.mesAnual}/mes`;
+      document.getElementById('mes-plus').innerHTML = `Equivale a ${prices.plus.mesAnual}/mes`;
+      document.getElementById('mes-pro').innerHTML = `Equivale a ${prices.pro.mesAnual}/mes`;
+    } else {
+      labelSemestral.style.color = 'var(--white)';
+      labelAnual.style.color = 'var(--muted)';
+
+      document.getElementById('price-basico').innerHTML = `${prices.basico.semestral} <span>/semestre</span>`;
+      document.getElementById('price-plus').innerHTML = `${prices.plus.semestral} <span>/semestre</span>`;
+      document.getElementById('price-pro').innerHTML = `${prices.pro.semestral} <span>/semestre</span>`;
+
+      document.getElementById('mes-basico').innerHTML = `Equivale a ${prices.basico.mesSemestral}/mes`;
+      document.getElementById('mes-plus').innerHTML = `Equivale a ${prices.plus.mesSemestral}/mes`;
+      document.getElementById('mes-pro').innerHTML = `Equivale a ${prices.pro.mesSemestral}/mes`;
+    }
+  });
+</script>
+
+</body>
+</html>

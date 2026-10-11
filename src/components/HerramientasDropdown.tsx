@@ -35,7 +35,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Presupuestos, APU y contratos para obras',
     logo: '/ecosistema/constructor-pro-logo.png',
     status: 'live',
-    href: '#productos',
+    href: '/constructor-pro',
     accent: 'orange',
   },
   {
@@ -45,7 +45,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Reservas online, panel y control avanzado para barberías',
     logo: '/ecosistema/logo-barberia.png',
     status: 'live',
-    href: '#productos',
+    href: '/peluqueria',
     accent: 'orange',
   },
   {
@@ -60,7 +60,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'soon',
-    href: '#productos',
+    href: '/restoran',
     accent: 'blue',
   },
   {
@@ -78,7 +78,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'soon',
-    href: '#productos',
+    href: '/agenda-pro',
     accent: 'blue',
   },
   {
@@ -94,7 +94,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'soon',
-    href: '#productos',
+    href: '/gestion',
     accent: 'blue',
   },
   {
@@ -112,7 +112,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'dev',
-    href: '#contacto',
+    href: '/nueva-app',
     accent: 'muted',
   },
 ];

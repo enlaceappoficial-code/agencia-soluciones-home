@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 // Tipado y configuración de temas para Tailwind (se deben usar clases completas)
@@ -128,8 +128,8 @@ const productosData = [
   {
     title: 'Enlace Red Social',
     description: 'Una comunidad digital para conectar personas, emprendedores, servicios y oportunidades cercanas.',
-    link: '#',
-    linkText: 'Conocer Red Social',
+    link: 'https://redenlace.cl',
+    linkText: 'Visitar Red Social',
     status: 'Disponible' as Status,
     theme: 'blue' as ThemeColor,
     icon: (
@@ -150,13 +150,14 @@ const productosData = [
     )
   },
 
-  // FILA 2: Futuras
+  // FILA 2: Futuras y Ecosistema
   {
-    title: 'Próxima herramienta',
-    description: 'Nueva solución digital en preparación para ampliar el ecosistema ENLACE.',
-    link: null,
+    title: 'Enlace Restorán',
+    description: 'Gestión de mesas, comandas, menú QR y pedidos para locales de comida.',
+    link: '/restoran',
+    linkText: 'Conocer Restorán',
     status: 'Próximamente' as Status,
-    theme: 'slate' as ThemeColor,
+    theme: 'blue' as ThemeColor,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -164,8 +165,8 @@ const productosData = [
     ),
     mockup: (
       <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-        <div className="w-2/3 h-2/3 border-2 border-dashed border-slate-500/30 rounded-xl flex items-center justify-center bg-[#071324]/50">
-          <svg className="w-8 h-8 text-slate-500/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-2/3 h-2/3 border-2 border-dashed border-blue-500/30 rounded-xl flex items-center justify-center bg-[#071324]/50">
+          <svg className="w-8 h-8 text-blue-400/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </div>
@@ -173,14 +174,15 @@ const productosData = [
     )
   },
   {
-    title: 'Nueva solución ENLACE',
-    description: 'Seguimos creando herramientas digitales para nuevas necesidades y rubros.',
-    link: null,
-    status: 'En desarrollo' as Status,
+    title: 'Enlace Agenda Pro',
+    description: 'Agenda compartida, reservas online y confirmaciones automáticas.',
+    link: '/agenda-pro',
+    linkText: 'Conocer Agenda Pro',
+    status: 'Próximamente' as Status,
     theme: 'indigo' as ThemeColor,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
     mockup: (
@@ -196,10 +198,11 @@ const productosData = [
     )
   },
   {
-    title: 'Tu idea puede ser la siguiente',
-    description: 'También desarrollamos soluciones digitales personalizadas según tu proyecto o negocio.',
-    link: null,
-    status: 'A medida' as Status,
+    title: 'Nueva App — Proponer',
+    description: 'Cuéntanos tu necesidad y construyamos juntos la próxima herramienta digital.',
+    link: '/nueva-app',
+    linkText: 'Proponer herramienta',
+    status: 'En desarrollo' as Status,
     theme: 'purple' as ThemeColor,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

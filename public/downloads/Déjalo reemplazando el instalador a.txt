@@ -1,0 +1,25 @@
+Déjalo reemplazando el instalador anterior en esta ruta exacta del proyecto:
+
+D:\OneDrive\Documentos\trae_projects\pagina web\incoming\github\joyful-joiner-jar\joyful-joiner-jar-main\public\downloads
+
+cd "D:\OneDrive\Documentos\trae_projects\pagina web\incoming\github\joyful-joiner-jar\joyful-joiner-jar-main"
+
+
+c:\Users\johnn\Documents\trae_projects\pagina web\incoming\github\joyful-joiner-jar\joyful-joiner-jar-main\public\downloads\enlace-constructor-pro-setup.exe
+
+- Mismo nombre: enlace-constructor-pro-setup.exe (importante).
+Después para que se actualice en la web:
+
+1. Compila y redeploy:
+   - npm run build
+   - npx wrangler pages deploy dist --project-name=redenlace-pages
+2. Verifica descargando:
+   - https://redenlace.cl/downloads/enlace-constructor-pro-setup.exe
+Si el navegador te baja el antiguo por caché, prueba en incógnito o agrega ?v=2 al link para probar.
+
+
+
+
+
+
+npx wrangler pages deploy dist --project-name=redenlace-pages
