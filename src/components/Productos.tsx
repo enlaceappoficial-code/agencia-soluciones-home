@@ -85,18 +85,14 @@ const productosData = [
       </svg>
     ),
     mockup: (
-      <div className="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-80 transition-opacity duration-500 scale-95 group-hover:scale-100">
-        <div className="w-3/4 h-[80%] border-2 border-orange-500/30 rounded-t-xl bg-[#071324] flex flex-col p-3 gap-3 shadow-[0_0_20px_rgba(249,115,22,0.2)]">
-          <div className="w-1/3 h-2 bg-orange-500/50 rounded-full"></div>
-          <div className="flex gap-2">
-            <div className="w-1/2 h-8 bg-orange-500/20 rounded-md border border-orange-500/20"></div>
-            <div className="w-1/2 h-8 bg-orange-500/20 rounded-md border border-orange-500/20"></div>
-          </div>
-          <div className="flex-1 w-full bg-white/5 rounded-md flex flex-col gap-2 p-2">
-            <div className="w-full h-2 bg-white/10 rounded-full"></div>
-            <div className="w-3/4 h-2 bg-white/10 rounded-full"></div>
-          </div>
-        </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ecosistema/constructor-pro-dashboard.png"
+          alt="Enlace Constructor Pro — Dashboard"
+          className="w-full h-full object-cover object-left-top opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061224] via-[#061224]/20 to-black/30 pointer-events-none" />
       </div>
     )
   },
