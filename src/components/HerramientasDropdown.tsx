@@ -35,7 +35,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Presupuestos, APU y contratos para obras',
     logo: '/ecosistema/constructor-pro-logo.png',
     status: 'live',
-    href: '/constructor-pro',
+    href: 'https://redenlace.cl/constructor-pro',
+    external: true,
     accent: 'orange',
   },
   {
@@ -45,7 +46,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Reservas online, panel y control avanzado para barberías',
     logo: '/ecosistema/logo-barberia.png',
     status: 'live',
-    href: '/peluqueria',
+    href: 'https://redenlace.cl/peluqueria',
+    external: true,
     accent: 'orange',
   },
   {
@@ -60,7 +62,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'soon',
-    href: '/restoran',
+    href: 'https://redenlace.cl/restoran',
+    external: true,
     accent: 'blue',
   },
   {
@@ -78,7 +81,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'soon',
-    href: '/agenda-pro',
+    href: 'https://redenlace.cl/agenda-pro',
+    external: true,
     accent: 'blue',
   },
   {
@@ -94,7 +98,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'soon',
-    href: '/gestion',
+    href: 'https://redenlace.cl/gestion',
+    external: true,
     accent: 'blue',
   },
   {
@@ -112,7 +117,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
       </svg>
     ),
     status: 'dev',
-    href: '/nueva-app',
+    href: 'https://redenlace.cl/nueva-app',
+    external: true,
     accent: 'muted',
   },
 ];

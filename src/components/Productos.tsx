@@ -75,7 +75,7 @@ const productosData = [
   {
     title: 'Constructor Pro',
     description: 'Presupuestos, partidas, APU y herramientas de gestión para profesionales de la construcción.',
-    link: '/constructor-pro',
+    link: 'https://redenlace.cl/constructor-pro',
     linkText: 'Conocer Constructor Pro',
     status: 'Disponible' as Status,
     theme: 'orange' as ThemeColor,
@@ -103,7 +103,7 @@ const productosData = [
   {
     title: 'Enlace Barbería',
     description: 'Agenda, reservas y gestión digital para barberías, peluquerías y profesionales del rubro.',
-    link: '/peluqueria',
+    link: 'https://redenlace.cl/peluqueria',
     linkText: 'Conocer Enlace Barbería',
     status: 'Disponible' as Status,
     theme: 'emerald' as ThemeColor,
@@ -154,7 +154,7 @@ const productosData = [
   {
     title: 'Enlace Restorán',
     description: 'Gestión de mesas, comandas, menú QR y pedidos para locales de comida.',
-    link: '/restoran',
+    link: 'https://redenlace.cl/restoran',
     linkText: 'Conocer Restorán',
     status: 'Próximamente' as Status,
     theme: 'blue' as ThemeColor,
@@ -176,7 +176,7 @@ const productosData = [
   {
     title: 'Enlace Agenda Pro',
     description: 'Agenda compartida, reservas online y confirmaciones automáticas.',
-    link: '/agenda-pro',
+    link: 'https://redenlace.cl/agenda-pro',
     linkText: 'Conocer Agenda Pro',
     status: 'Próximamente' as Status,
     theme: 'indigo' as ThemeColor,
@@ -200,7 +200,7 @@ const productosData = [
   {
     title: 'Nueva App — Proponer',
     description: 'Cuéntanos tu necesidad y construyamos juntos la próxima herramienta digital.',
-    link: '/nueva-app',
+    link: 'https://redenlace.cl/nueva-app',
     linkText: 'Proponer herramienta',
     status: 'En desarrollo' as Status,
     theme: 'purple' as ThemeColor,
@@ -284,12 +284,26 @@ export default function Productos() {
                   
                   {/* Enlace dinámico (o espacio vacío si no hay enlace) */}
                   {item.link ? (
-                    <Link href={item.link} className={`inline-flex items-center gap-2 text-[14px] font-bold transition-colors w-fit group/btn ${theme.link}`}>
-                      {item.linkText}
-                      <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
+                    item.link.startsWith('http') ? (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 text-[14px] font-bold transition-colors w-fit group/btn ${theme.link}`}
+                      >
+                        {item.linkText}
+                        <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <Link href={item.link} className={`inline-flex items-center gap-2 text-[14px] font-bold transition-colors w-fit group/btn ${theme.link}`}>
+                        {item.linkText}
+                        <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </Link>
+                    )
                   ) : (
                     <div className="h-5"></div> /* Mantiene la misma altura que tendría un botón para que las cards queden alineadas */
                   )}
