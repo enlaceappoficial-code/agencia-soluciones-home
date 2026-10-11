@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import HerramientasDropdown from "./HerramientasDropdown";
 
 /**
  * Barra superior clonada del sitio original redenlace.cl
@@ -117,8 +118,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Derecha: botón + hamburguesa móvil */}
-        <div style={{ justifySelf: "end", display: "flex", alignItems: "center", gap: "16px" }}>
+        {/* Derecha: botón Herramientas (Neón Naranjo) + botón Cuéntanos tu idea + hamburguesa móvil */}
+        <div style={{ justifySelf: "end", display: "flex", alignItems: "center", gap: "12px" }}>
+          <HerramientasDropdown />
+
           <Link
             href="#contacto"
             className="enlace-nav-btn hidden md:inline-flex"
