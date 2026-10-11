@@ -178,12 +178,14 @@ const productosData = [
       </svg>
     ),
     mockup: (
-      <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-        <div className="w-2/3 h-2/3 border-2 border-dashed border-blue-500/30 rounded-xl flex items-center justify-center bg-[#071324]/50">
-          <svg className="w-8 h-8 text-blue-400/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ecosistema/restoran-dashboard.jpg"
+          alt="Enlace Restorán — Dashboard"
+          className="w-full h-full object-cover object-left-top opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061224] via-[#061224]/20 to-black/30 pointer-events-none" />
       </div>
     )
   },
@@ -200,14 +202,14 @@ const productosData = [
       </svg>
     ),
     mockup: (
-      <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 scale-95 group-hover:scale-100">
-        <div className="w-[80%] h-[70%] border-2 border-indigo-500/30 rounded-xl bg-[#071324] flex items-center justify-center p-4 shadow-[0_0_20px_rgba(99,102,241,0.1)]">
-          <div className="flex gap-4 items-center">
-            <div className="w-3 h-12 bg-indigo-500/20 rounded-full animate-pulse"></div>
-            <div className="w-3 h-8 bg-indigo-500/40 rounded-full mt-4"></div>
-            <div className="w-3 h-16 bg-indigo-500/30 rounded-full mb-4"></div>
-          </div>
-        </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ecosistema/agenda-pro-dashboard.jpg"
+          alt="Enlace Agenda Pro — Dashboard"
+          className="w-full h-full object-cover object-left-top opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061224] via-[#061224]/20 to-black/30 pointer-events-none" />
       </div>
     )
   },
@@ -224,14 +226,14 @@ const productosData = [
       </svg>
     ),
     mockup: (
-      <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 scale-95 group-hover:scale-100">
-        <div className="w-3/4 h-[80%] border-2 border-purple-500/30 rounded-xl bg-gradient-to-br from-purple-500/5 to-transparent flex items-center justify-center border-dashed">
-          <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center border border-purple-500/20">
-            <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
-          </div>
-        </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ecosistema/nueva-app-mockup.jpg"
+          alt="Nueva App — Proponer Solución"
+          className="w-full h-full object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061224] via-[#061224]/20 to-black/30 pointer-events-none" />
       </div>
     )
   }
