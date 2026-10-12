@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import HerramientasDropdown from "./HerramientasDropdown";
 
 /**
@@ -20,14 +21,24 @@ const C = {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isRedSocial = pathname === "/red-social" || pathname?.startsWith("/red-social/");
 
-  const navLinks = [
-    { name: "Inicio", href: "#" },
-    { name: "Soluciones", href: "#soluciones" },
-    { name: "Productos", href: "#productos" },
-    { name: "Proyectos", href: "#proyectos" },
-    { name: "Nosotros", href: "#nosotros" },
-  ];
+  const navLinks = isRedSocial
+    ? [
+        { name: "Inicio Agencia", href: "/" },
+        { name: "¿Qué es?", href: "#que-es" },
+        { name: "¿Para quién?", href: "#para-quien" },
+        { name: "Ecosistema", href: "#apps" },
+        { name: "Cómo funciona", href: "#como-funciona" },
+      ]
+    : [
+        { name: "Inicio", href: "#" },
+        { name: "Soluciones", href: "#soluciones" },
+        { name: "Productos", href: "#productos" },
+        { name: "Proyectos", href: "#proyectos" },
+        { name: "Nosotros", href: "#nosotros" },
+      ];
 
   return (
     <nav
@@ -122,26 +133,53 @@ export default function Navbar() {
         <div style={{ justifySelf: "end", display: "flex", alignItems: "center", gap: "12px" }}>
           <HerramientasDropdown />
 
-          <Link
-            href="#contacto"
-            className="enlace-nav-btn hidden md:inline-flex"
-            style={{
-              alignItems: "center",
-              gap: "8px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
-              padding: "10px 20px",
-              fontSize: "14px",
-              lineHeight: "20px",
-              fontWeight: 600,
-              fontFamily: "'DM Sans', system-ui, sans-serif",
-              color: "hsl(210, 40%, 98%)",
-              textDecoration: "none",
-              transition: "all .3s cubic-bezier(.4,0,.2,1)",
-            }}
-          >
-            Cuéntanos tu idea
-          </Link>
+          {isRedSocial ? (
+            <a
+              href="https://play.google.com/store/apps/details?id=com.enlace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="enlace-nav-btn hidden md:inline-flex items-center gap-2"
+              style={{
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
+                padding: "10px 20px",
+                fontSize: "14px",
+                lineHeight: "20px",
+                fontWeight: 600,
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+                color: "hsl(210, 40%, 98%)",
+                textDecoration: "none",
+                boxShadow: "0 0 16px rgba(59,130,246,0.3)",
+                transition: "all .3s cubic-bezier(.4,0,.2,1)",
+              }}
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186c-.365-.33-.61-.83-.61-1.42V3.234c0-.59.245-1.09.61-1.42zm11.24 11.24l2.58 2.58-13.04 7.53 10.46-10.11zm0-2.108L4.39 1.056l13.04 7.53-2.58 2.36zm1.48 1.054l4.08 2.355c.92.53.92 1.402 0 1.933l-4.08 2.355-2.22-2.22 2.22-2.423z"/>
+              </svg>
+              Descargar App
+            </a>
+          ) : (
+            <Link
+              href="#contacto"
+              className="enlace-nav-btn hidden md:inline-flex"
+              style={{
+                alignItems: "center",
+                gap: "8px",
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
+                padding: "10px 20px",
+                fontSize: "14px",
+                lineHeight: "20px",
+                fontWeight: 600,
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+                color: "hsl(210, 40%, 98%)",
+                textDecoration: "none",
+                transition: "all .3s cubic-bezier(.4,0,.2,1)",
+              }}
+            >
+              Cuéntanos tu idea
+            </Link>
+          )}
 
           <button
             className="md:hidden flex items-center"
@@ -187,24 +225,50 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link
-            href="#contacto"
-            className="enlace-nav-btn"
-            style={{
-              textAlign: "center",
-              marginTop: "8px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
-              padding: "10px 20px",
-              fontSize: "14px",
-              fontWeight: 600,
-              color: "hsl(210, 40%, 98%)",
-              textDecoration: "none",
-            }}
-            onClick={() => setIsOpen(false)}
-          >
-            Cuéntanos tu idea
-          </Link>
+          {isRedSocial ? (
+            <a
+              href="https://play.google.com/store/apps/details?id=com.enlace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="enlace-nav-btn flex items-center justify-center gap-2"
+              style={{
+                textAlign: "center",
+                marginTop: "8px",
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
+                padding: "10px 20px",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: "hsl(210, 40%, 98%)",
+                textDecoration: "none",
+              }}
+              onClick={() => setIsOpen(false)}
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186c-.365-.33-.61-.83-.61-1.42V3.234c0-.59.245-1.09.61-1.42zm11.24 11.24l2.58 2.58-13.04 7.53 10.46-10.11zm0-2.108L4.39 1.056l13.04 7.53-2.58 2.36zm1.48 1.054l4.08 2.355c.92.53.92 1.402 0 1.933l-4.08 2.355-2.22-2.22 2.22-2.423z"/>
+              </svg>
+              Descargar App
+            </a>
+          ) : (
+            <Link
+              href="#contacto"
+              className="enlace-nav-btn"
+              style={{
+                textAlign: "center",
+                marginTop: "8px",
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
+                padding: "10px 20px",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: "hsl(210, 40%, 98%)",
+                textDecoration: "none",
+              }}
+              onClick={() => setIsOpen(false)}
+            >
+              Cuéntanos tu idea
+            </Link>
+          )}
         </div>
       )}
     </nav>

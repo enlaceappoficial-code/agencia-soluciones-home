@@ -24,8 +24,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Plataforma hiperlocal para conectar y visibilizar emprendimientos en Chile',
     logo: '/enlace-logo.png',
     status: 'live',
-    href: 'https://redenlace.cl',
-    external: true,
+    href: '/red-social',
+    external: false,
     accent: 'green',
   },
   {
