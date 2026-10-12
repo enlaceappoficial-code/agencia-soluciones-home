@@ -68,7 +68,7 @@ export default function RedSocialPage() {
           <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
             Red social hiperlocal para emprendedores y servicios en Chile.
             <br className="hidden sm:inline" />
-            <span className="text-amber-300 font-semibold"> Conecta</span> con
+            <span className="text-orange-500 font-semibold"> Conecta</span> con
             lo que tienes <span className="text-sky-300 font-semibold">cerca</span>.
           </p>
 
