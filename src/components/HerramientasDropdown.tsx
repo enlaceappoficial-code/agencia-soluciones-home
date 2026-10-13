@@ -46,8 +46,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Reservas online, panel y control avanzado para barberías',
     logo: '/ecosistema/logo-barberia.png',
     status: 'live',
-    href: 'https://redenlace.cl/peluqueria',
-    external: true,
+    href: '/peluqueria',
+    external: false,
     accent: 'orange',
   },
   {

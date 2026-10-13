@@ -99,7 +99,7 @@ const productosData = [
   {
     title: 'Enlace Barbería',
     description: 'Agenda, reservas y gestión digital para barberías, peluquerías y profesionales del rubro.',
-    link: 'https://redenlace.cl/peluqueria',
+    link: '/peluqueria',
     linkText: 'Conocer Enlace Barbería',
     status: 'Disponible' as Status,
     theme: 'emerald' as ThemeColor,
