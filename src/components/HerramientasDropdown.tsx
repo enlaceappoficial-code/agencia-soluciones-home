@@ -35,8 +35,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     description: 'Presupuestos, APU y contratos para obras',
     logo: '/ecosistema/constructor-pro-logo.png',
     status: 'live',
-    href: 'https://redenlace.cl/constructor-pro',
-    external: true,
+    href: '/constructor-pro',
+    external: false,
     accent: 'orange',
   },
   {
