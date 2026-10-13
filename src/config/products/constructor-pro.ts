@@ -18,6 +18,7 @@ export const constructorProConfig: ProductConfig = {
   },
   navLinks: [
     { label: "Vs Excel", href: "#vs-excel", external: false },
+    { label: "Regalos", href: "#regalos", external: false },
     { label: "Funciones", href: "#funciones", external: false },
     { label: "Planes y Precios", href: "#planes", external: false },
     { label: "Comparativa", href: "#comparativa", external: false },
