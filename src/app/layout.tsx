@@ -42,8 +42,13 @@ export const metadata: Metadata = {
     images: ["/enlace-logo.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/enlace-logo.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
