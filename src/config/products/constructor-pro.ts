@@ -26,7 +26,7 @@ export const constructorProConfig: ProductConfig = {
     { label: "Descarga", href: "#descarga", external: false },
   ],
   primaryCta: {
-    label: "Descargar instalador (Windows)",
+    label: "Descargar instalador",
     href: "/downloads/enlace-constructor-pro-setup.exe",
     external: true,
     variant: "primary",

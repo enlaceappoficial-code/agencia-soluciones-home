@@ -22,6 +22,18 @@ const C = {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  // No renderizar el Navbar global de Agencia en páginas de producto (usan su propio ProductNavbar)
+  const isProductPage =
+    pathname === "/constructor-pro" ||
+    pathname?.startsWith("/constructor-pro/") ||
+    pathname === "/peluqueria" ||
+    pathname?.startsWith("/peluqueria/");
+
+  if (isProductPage) {
+    return null;
+  }
+
   const isRedSocial = pathname === "/red-social" || pathname?.startsWith("/red-social/");
 
   const navLinks = isRedSocial

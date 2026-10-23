@@ -44,20 +44,24 @@ export default function ProductNavbar({
 
   const renderCtaButton = (isMobile = false) => {
     const isExternal = cta.external ?? cta.href.startsWith("http");
-    const baseStyle = {
+    const baseStyle: React.CSSProperties = {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      gap: "8px",
-      borderRadius: "12px",
-      padding: isMobile ? "12px 20px" : "10px 20px",
-      fontSize: "14px",
-      lineHeight: "20px",
+      gap: "6px",
+      borderRadius: "10px",
+      padding: isMobile ? "12px 20px" : "8px 16px",
+      fontSize: "13px",
+      lineHeight: "1",
       fontWeight: 600,
       fontFamily: "'DM Sans', system-ui, sans-serif",
       color: "hsl(210, 40%, 98%)",
       textDecoration: "none",
       transition: "all .3s cubic-bezier(.4,0,.2,1)",
+      whiteSpace: "nowrap",
+      flexShrink: 0,
+      height: isMobile ? "auto" : "38px",
+      boxSizing: "border-box",
       background:
         cta.variant === "whatsapp"
           ? "#25D366"
@@ -81,7 +85,7 @@ export default function ProductNavbar({
           href={cta.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`enlace-nav-btn ${isMobile ? "w-full text-center" : "hidden md:inline-flex"}`}
+          className={`enlace-nav-btn ${isMobile ? "w-full text-center" : "hidden sm:inline-flex"}`}
           style={baseStyle}
           onClick={() => isMobile && setIsOpen(false)}
         >
@@ -93,7 +97,7 @@ export default function ProductNavbar({
     return (
       <Link
         href={cta.href}
-        className={`enlace-nav-btn ${isMobile ? "w-full text-center" : "hidden md:inline-flex"}`}
+        className={`enlace-nav-btn ${isMobile ? "w-full text-center" : "hidden sm:inline-flex"}`}
         style={baseStyle}
         onClick={() => isMobile && setIsOpen(false)}
       >
@@ -120,66 +124,66 @@ export default function ProductNavbar({
       <div
         style={{
           width: "100%",
-          maxWidth: "1280px",
+          maxWidth: "1380px",
           height: "64px",
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 20px",
           boxSizing: "border-box",
-          display: "grid",
-          gridTemplateColumns: "1fr auto 1fr",
+          display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
           gap: "16px",
         }}
       >
-        {/* Logo ENLACE: Siempre redirige a la Agencia Home "/" */}
-        <Link
-          href="/"
-          style={{
-            justifySelf: "start",
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
-            textDecoration: "none",
-            flexShrink: 0,
-          }}
-          title="ENLACE Soluciones Digitales — Volver a Inicio"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/enlace-logo.png"
-            alt="ENLACE"
+        {/* Logo ENLACE + Nombre de Producto */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+          <Link
+            href="/"
             style={{
-              width: "40px",
-              height: "40px",
-              objectFit: "contain",
-              display: "block",
-              filter: "drop-shadow(0 0 10px hsla(209, 96%, 56%, 0.18))",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              textDecoration: "none",
             }}
-          />
-          <div
-            style={{
-              fontFamily: "'Syne', system-ui, sans-serif",
-              fontWeight: 800,
-              fontSize: "20px",
-              lineHeight: 1,
-              letterSpacing: "0.05em",
-            }}
+            title="ENLACE Soluciones Digitales — Volver a Inicio"
           >
-            <span style={{ color: COLORS.blueGlow }}>ENLA</span>
-            <span style={{ color: COLORS.orange }}>CE</span>
-          </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/enlace-logo.png"
+              alt="ENLACE"
+              style={{
+                width: "36px",
+                height: "36px",
+                objectFit: "contain",
+                display: "block",
+                filter: "drop-shadow(0 0 10px hsla(209, 96%, 56%, 0.18))",
+              }}
+            />
+            <div
+              style={{
+                fontFamily: "'Syne', system-ui, sans-serif",
+                fontWeight: 800,
+                fontSize: "19px",
+                lineHeight: 1,
+                letterSpacing: "0.05em",
+              }}
+            >
+              <span style={{ color: COLORS.blueGlow }}>ENLA</span>
+              <span style={{ color: COLORS.orange }}>CE</span>
+            </div>
+          </Link>
           {productName && (
             <span
-              className="hidden lg:inline-block text-xs font-semibold px-2 py-0.5 rounded-md border border-white/10 text-slate-300 ml-1"
+              className="hidden md:inline-block text-xs font-semibold px-2 py-0.5 rounded-md border border-white/10 text-slate-300 ml-1 whitespace-nowrap"
               style={{ background: "rgba(255,255,255,0.05)" }}
             >
               {productName}
             </span>
           )}
-        </Link>
+        </div>
 
-        {/* Centro: Enlaces de navegación del producto (Escritorio) */}
-        <div className="hidden md:flex" style={{ justifySelf: "center", alignItems: "center", gap: "24px" }}>
+        {/* Centro: Enlaces de navegación del producto (Escritorio grande) */}
+        <div className="hidden xl:flex" style={{ alignItems: "center", gap: "20px" }}>
           {allNavLinks.map((link) => {
             const isExternal = link.external ?? link.href.startsWith("http");
             if (isExternal) {
@@ -193,9 +197,10 @@ export default function ProductNavbar({
                   style={{
                     color: COLORS.foreground,
                     textDecoration: "none",
-                    fontSize: "14px",
+                    fontSize: "13.5px",
                     fontWeight: 500,
                     fontFamily: "'DM Sans', system-ui, sans-serif",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {link.label}
@@ -210,9 +215,10 @@ export default function ProductNavbar({
                 style={{
                   color: COLORS.foreground,
                   textDecoration: "none",
-                  fontSize: "14px",
+                  fontSize: "13.5px",
                   fontWeight: 500,
                   fontFamily: "'DM Sans', system-ui, sans-serif",
+                  whiteSpace: "nowrap",
                 }}
               >
                 {link.label}
@@ -222,17 +228,17 @@ export default function ProductNavbar({
         </div>
 
         {/* Derecha: Herramientas Dropdown + Botón CTA + Hamburguesa */}
-        <div style={{ justifySelf: "end", display: "flex", alignItems: "center", gap: "12px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
           <HerramientasDropdown />
           {renderCtaButton(false)}
 
           <button
-            className="md:hidden flex items-center justify-center p-2"
+            className="xl:hidden flex items-center justify-center p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Abrir menú"
-            style={{ background: "none", border: "none", color: "white", cursor: "pointer" }}
+            style={{ background: "none", border: "none", cursor: "pointer" }}
           >
-            <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth={2}>
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth={2}>
               {isOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               ) : (
