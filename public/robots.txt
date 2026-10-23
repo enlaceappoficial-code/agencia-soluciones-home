@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Host: https://redenlace.cl
+Sitemap: https://redenlace.cl/sitemap.xml

@@ -1,0 +1,30 @@
+# ==============================================================================
+# Cloudflare Pages _redirects - ENLACE Soluciones Digitales (redenlace.cl)
+# ==============================================================================
+
+# --- Redirecciones de Productos y Alias habituales ---
+/barberia                  /peluqueria              301
+/barberia/*                /peluqueria              301
+/enlace-barberia           /peluqueria              301
+/peluqueria-pro            /peluqueria              301
+
+/constructor               /constructor-pro         301
+/constructorpro            /constructor-pro         301
+/enlace-constructor-pro    /constructor-pro         301
+
+/redsocial                 /red-social              301
+/enlace-red-social         /red-social              301
+
+# --- Redirecciones de URLs históricas y Google Sites ---
+/home                      /                        301
+/inicio                    /                        301
+/index.html                /                        301
+/sitio                     /                        301
+/sitio/*                   /                        301
+/web                       /                        301
+/servicios                 /                        301
+/contacto                  /#contacto               301
+/nosotros                  /#nosotros               301
+/productos                 /#productos              301
+/proyectos                 /#proyectos              301
+/soluciones                /#soluciones             301
