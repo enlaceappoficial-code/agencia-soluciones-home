@@ -773,20 +773,41 @@ export default function ConstructorProPage() {
               <div className="relative w-[230px] h-[470px] rounded-[2.6rem] bg-slate-950 border-[6px] border-slate-700 shadow-[0_20px_60px_rgba(6,182,212,0.25)] overflow-hidden">
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 h-4 w-20 rounded-full bg-slate-900 z-20" />
                 {showApp ? (
-                  <iframe
-                    src="https://medidas.redenlace.cl"
-                    title="ECP Medidas de Terreno - demo en vivo"
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full bg-white"
-                  />
+                  <div className="relative w-full h-full bg-slate-900">
+                    <iframe
+                      src="https://medidas.redenlace.cl"
+                      title="ECP Medidas de Terreno - demo en vivo"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full bg-white"
+                    />
+                    {/* Barra de control inferior: Pantalla completa y Salir */}
+                    <div className="absolute bottom-2.5 left-2 right-2 flex items-center justify-between gap-1 z-30 bg-slate-950/95 backdrop-blur-md px-2.5 py-1.5 rounded-xl border border-cyan-500/40 text-[10px]">
+                      <a
+                        href="https://medidas.redenlace.cl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-300 hover:text-cyan-200 font-bold flex items-center gap-1"
+                      >
+                        <span>↗</span> Pantalla completa
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setShowApp(false)}
+                        className="text-slate-400 hover:text-white font-bold cursor-pointer px-1"
+                        title="Volver"
+                      >
+                        ✕ Salir
+                      </button>
+                    </div>
+                  </div>
                 ) : (
                   <button
                     type="button"
                     onClick={() => setShowApp(true)}
-                    className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-5 text-center bg-gradient-to-b from-[#0a2a55] via-[#0c3b73] to-[#071a3a] hover:from-[#0d3366] transition-colors"
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-5 text-center bg-gradient-to-b from-[#0a2a55] via-[#0c3b73] to-[#071a3a] hover:from-[#0d3366] transition-colors cursor-pointer group"
                     aria-label="Probar la app ECP Medidas aquí"
                   >
-                    <span className="text-5xl">📐</span>
+                    <span className="text-5xl group-hover:scale-110 transition-transform">📐</span>
                     <span className="text-white font-extrabold text-base leading-tight">ECP Medidas de Terreno</span>
                     <span className="text-[11px] text-cyan-200">Calculadora Herón · Partidas · Fotos · Exportar JSON</span>
                     <span className="mt-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-cyan-500 text-slate-950 text-xs font-black animate-pulse">
@@ -795,7 +816,9 @@ export default function ConstructorProPage() {
                   </button>
                 )}
               </div>
-              <span className="text-[11px] text-slate-400 mt-3">Demo en vivo · funciona igual en tu celular</span>
+              <span className="text-[11px] text-slate-400 mt-3 flex items-center gap-1">
+                <span>⚡</span> Demo en vivo · Funciona igual en Android e iPhone
+              </span>
             </div>
 
             <div className="shrink-0 flex flex-col items-center bg-[#071630] p-4 rounded-2xl border border-cyan-500/40 shadow-inner">
@@ -1663,6 +1686,44 @@ export default function ConstructorProPage() {
 
       {/* 12. FOOTER MAESTRO */}
       <ProductFooter config={constructorProConfig} />
+
+      {/* 13. BOTÓN FLOTANTE FIJO DE WHATSAPP CON NOTIFICACIÓN ACTIVA */}
+      <aside aria-label="Contacto por WhatsApp" className="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+        {/* Tooltip / Globo de texto persuasivo */}
+        <a
+          href="https://wa.me/56941278725?text=Hola%20John,%20estoy%20viendo%20la%20p%C3%A1gina%20de%20Enlace%20Constructor%20Pro%20y%20tengo%20una%20consulta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group hidden sm:flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#091f42]/95 border border-emerald-500/40 text-xs text-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.4)] backdrop-blur-md hover:border-emerald-400 hover:text-white transition-all transform hover:-translate-x-1"
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span className="font-medium">
+            ¿Dudas con los planes? <strong className="text-emerald-400 font-bold group-hover:underline">Escríbenos en vivo</strong>
+          </span>
+        </a>
+
+        {/* Botón Circular con Ícono de WhatsApp */}
+        <a
+          href="https://wa.me/56941278725?text=Hola%20John,%20estoy%20viendo%20la%20p%C3%A1gina%20de%20Enlace%20Constructor%20Pro%20y%20tengo%20una%20consulta"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar por WhatsApp a Enlace Constructor Pro"
+          className="relative grid h-14 w-14 place-items-center rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white shadow-[0_4px_25px_rgba(16,185,129,0.5)] hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"
+        >
+          <span className="absolute -top-1 -right-1 flex h-4 w-4">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-orange-500 text-[9px] font-black text-slate-950 items-center justify-center">
+              1
+            </span>
+          </span>
+          <svg className="h-7 w-7 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+      </aside>
     </main>
   );
 }
