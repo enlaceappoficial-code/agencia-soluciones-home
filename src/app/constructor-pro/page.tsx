@@ -718,7 +718,7 @@ export default function ConstructorProPage() {
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <a
-                  href="/medidas"
+                  href="https://medidas.redenlace.cl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5"
@@ -742,7 +742,7 @@ export default function ConstructorProPage() {
                 Escanea con tu celular 📱
               </span>
               <span className="text-[10px] text-slate-400">
-                redenlace.cl/medidas
+                medidas.redenlace.cl
               </span>
             </div>
           </div>
