@@ -82,7 +82,7 @@ const BONUSES = [
     badge: "Formularios PDF · 40 págs",
     title: "Kit Profesional de 14 Checklists de Terreno",
     value: "$15.000 CLP",
-    includedIn: "Gratis en planes Pro y Plus",
+    includedIn: "Gratis desde plan Constructor",
     description: "Formatos de 2 páginas listos para imprimir y llevar en la tabla portapapeles en cada visita, recepción e inspección de obra.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -95,7 +95,7 @@ const BONUSES = [
     badge: "Plantillas y Ejemplos · 71 págs",
     title: "Pack de 11 Documentos y Actas de Obra",
     value: "$20.000 CLP",
-    includedIn: "Gratis en planes Pro y Plus",
+    includedIn: "Gratis desde plan Constructor",
     description: "Modelos simples y ejemplos reales completados de actas de reunión, recepción de terreno, órdenes de cambio y postventa.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ const BONUSES = [
     badge: "Planilla Excel Editable",
     title: "Calculadora y Analizador de Costos ECP",
     value: "$19.000 CLP",
-    includedIn: "Gratis en planes Pro y Plus",
+    includedIn: "Gratis desde plan Pro",
     description: "Planilla en Excel automatizada para calcular precios unitarios, margen real de venta y desgloses de forma ágil.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -125,7 +125,7 @@ const BONUSES = [
     badge: "App Móvil Cloud Web",
     title: "ECP Medidas de Terreno (Sync JSON)",
     value: "$49.990 CLP",
-    includedIn: "Gratis desde plan Constructor",
+    includedIn: "Gratis desde plan Pro",
     description: "Levantamiento de partidas, fotos en terreno y calculadora de áreas irregulares con exportación JSON directa a tu PC.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -138,7 +138,7 @@ const BONUSES = [
     badge: "Curso Completo Digital",
     title: "Curso Maestro Excel para Construcción",
     value: "$69.000 CLP",
-    includedIn: "Gratis desde plan Constructor",
+    includedIn: "Gratis desde plan Pro",
     description: "Aprende fórmulas dinámicas, macros, tablas dinámicas y reportería financiera para constructoras y contratistas.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -151,7 +151,7 @@ const BONUSES = [
     badge: "Planillas Maestras XLSX",
     title: "Megapack de Cubicaciones y Rendimientos",
     value: "$79.000 CLP",
-    includedIn: "Gratis desde plan Constructor",
+    includedIn: "Exclusivo del plan Plus",
     description: "Bases de cálculo probadas en terreno para movimiento de tierras, hormigones, enfierraduras, techumbres y terminaciones.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -165,7 +165,7 @@ const BONUSES = [
     badge: "Compendio Normativo PDF",
     title: "Biblioteca de Normativa y Prevención de Faenas",
     value: "$69.000 CLP",
-    includedIn: "Gratis en planes Pro y Plus",
+    includedIn: "Exclusivo del plan Plus",
     description: "Compendio de ordenanzas, normas NCh, protocolos de faena, seguridad laboral y modelos de contratos para defensa ante inspecciones.",
     icon: (
       <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -266,6 +266,7 @@ const PLANS: PlanItem[] = [
       "Gestión de clientes y borradores",
       "Documentos de obra y contratos",
       "WhatsApp + Calendario",
+      "🎁 Regalo: Manual Vol. I Presupuestar y Rentabilizar (+$25.000)",
     ],
     cta: "Solicitar",
     badge: null,
@@ -295,8 +296,7 @@ const PLANS: PlanItem[] = [
       "Base de materiales y soluciones constructivas",
       "APU — Análisis de Precios Unitarios",
       "Lista de compras por obra",
-      "🎁 App Móvil ECP Medidas (JSON 1-clic)",
-      "Curso Excel + Megapack Obras",
+      "🎁 Regalos: Manual Vol. I y II + 14 Checklists + 11 Actas de Obra (+$95.000)",
     ],
     cta: "Solicitar",
     badge: null,
@@ -326,8 +326,7 @@ const PLANS: PlanItem[] = [
       "Carta Gantt + exportación MS Project (XML)",
       "Informe de Obra con fotos y detalle técnico",
       "Calendario laboral + Estados de Pago",
-      "🎁 App Móvil ECP Medidas (JSON 1-clic)",
-      "Batería Completa de Bonos (+ $380.000)",
+      "🎁 Todo lo del Constructor + Calculadora Excel, App ECP Medidas y Curso de Excel (+$233.000)",
     ],
     cta: "Solicitar",
     badge: "popular",
@@ -357,8 +356,8 @@ const PLANS: PlanItem[] = [
       "Herramientas de apoyo Mercado Público",
       "Análisis de conveniencia con APU",
       "Organizar antecedentes de oferta",
-      "🎁 App Móvil ECP Medidas (JSON 1-clic)",
-      "Batería Completa de Bonos + Soporte VIP",
+      "🎁 Pack completo +$380.000: suma Megapack y Biblioteca Normativa (exclusivos Plus)",
+      "Soporte técnico prioritario",
     ],
     cta: "Solicitar",
     badge: null,
@@ -396,6 +395,7 @@ const COMPARISON_ROWS = [
 
 export default function ConstructorProPage() {
   const [period, setPeriod] = useState<BillingPeriod>("anual");
+  const [showApp, setShowApp] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#071a3a] text-slate-100 font-sans selection:bg-orange-500 selection:text-slate-950 pt-16">
@@ -726,9 +726,39 @@ export default function ConstructorProPage() {
                   <span>📲</span> Abrir App Móvil de Terreno
                 </a>
                 <span className="text-xs text-emerald-400 font-medium">
-                  🎁 Incluida gratis de por vida en planes Constructor y Pro
+                  🎁 Incluida gratis desde el plan Pro
                 </span>
               </div>
+            </div>
+
+            {/* Celular interactivo: carga la app real al tocar */}
+            <div className="shrink-0 flex flex-col items-center">
+              <div className="relative w-[230px] h-[470px] rounded-[2.6rem] bg-slate-950 border-[6px] border-slate-700 shadow-[0_20px_60px_rgba(6,182,212,0.25)] overflow-hidden">
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 h-4 w-20 rounded-full bg-slate-900 z-20" />
+                {showApp ? (
+                  <iframe
+                    src="https://medidas.redenlace.cl"
+                    title="ECP Medidas de Terreno - demo en vivo"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full bg-white"
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setShowApp(true)}
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-5 text-center bg-gradient-to-b from-[#0a2a55] via-[#0c3b73] to-[#071a3a] hover:from-[#0d3366] transition-colors"
+                    aria-label="Probar la app ECP Medidas aquí"
+                  >
+                    <span className="text-5xl">📐</span>
+                    <span className="text-white font-extrabold text-base leading-tight">ECP Medidas de Terreno</span>
+                    <span className="text-[11px] text-cyan-200">Calculadora Herón · Partidas · Fotos · Exportar JSON</span>
+                    <span className="mt-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-cyan-500 text-slate-950 text-xs font-black animate-pulse">
+                      ▶ Toca para probarla
+                    </span>
+                  </button>
+                )}
+              </div>
+              <span className="text-[11px] text-slate-400 mt-3">Demo en vivo · funciona igual en tu celular</span>
             </div>
 
             <div className="shrink-0 flex flex-col items-center bg-[#071630] p-4 rounded-2xl border border-cyan-500/40 shadow-inner">
@@ -836,7 +866,7 @@ export default function ConstructorProPage() {
                       <rect x="2" y="7" width="20" height="5" />
                       <line x1="12" y1="22" x2="12" y2="7" />
                     </svg>
-                    Batería Completa de Bonos · Incluida en tu Licencia
+                    Batería Completa de Bonos · Pack total exclusivo del Plan Plus
                   </div>
 
                   <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl mb-3 text-white">
@@ -847,23 +877,31 @@ export default function ConstructorProPage() {
                     Recibes todos los manuales maestros, guías, checklists, actas legales, la calculadora de costos Excel, la <strong>App Móvil ECP Medidas de Terreno</strong>, el curso completo de Excel y los megapacks de obras civiles directamente en tu correo y WhatsApp sin costo adicional según tu plan.
                   </p>
 
-                  {/* Pills de contenido rápido */}
-                  <div className="flex flex-wrap gap-2.5">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
-                      <span className="text-emerald-400">✓</span> 2 Manuales ECP (147 págs)
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
-                      <span className="text-emerald-400">✓</span> 14 Checklists + 11 Actas
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
-                      <span className="text-emerald-400">✓</span> App Móvil ECP Medidas
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
-                      <span className="text-emerald-400">✓</span> Curso de Excel Completo
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
-                      <span className="text-emerald-400">✓</span> Planilla APU + Megapack
-                    </span>
+                  {/* Escalera de regalos por plan */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                    {[
+                      { plan: "Básico", gift: "Manual Vol. I", total: "$25.000", highlight: false },
+                      { plan: "Constructor", gift: "+ Manual II, Checklists y Actas", total: "$95.000", highlight: false },
+                      { plan: "Pro", gift: "+ Excel, App Móvil y Curso", total: "$233.000", highlight: false },
+                      { plan: "Plus", gift: "+ Megapack y Biblioteca: TODO", total: "$380.000", highlight: true },
+                    ].map((step) => (
+                      <div
+                        key={step.plan}
+                        className={`rounded-xl px-3 py-2.5 border text-left ${
+                          step.highlight
+                            ? "bg-gradient-to-br from-amber-500/25 to-orange-500/15 border-orange-400/70 shadow-[0_0_18px_rgba(245,160,32,0.3)]"
+                            : "bg-blue-950/80 border-blue-800/60"
+                        }`}
+                      >
+                        <div className={`text-[11px] font-black uppercase tracking-wider ${step.highlight ? "text-orange-300" : "text-slate-400"}`}>
+                          Plan {step.plan}
+                        </div>
+                        <div className="text-xs text-slate-200 leading-snug my-1">{step.gift}</div>
+                        <div className={`text-sm font-black ${step.highlight ? "text-amber-300" : "text-white"}`}>
+                          {step.total} <span className="text-[10px] font-semibold text-emerald-400">gratis</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 

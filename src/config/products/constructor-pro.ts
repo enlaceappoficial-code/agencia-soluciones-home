@@ -149,6 +149,7 @@ export const constructorProConfig: ProductConfig = {
           "Gestión de clientes y borradores",
           "Documentos de obra y contratos",
           "WhatsApp + Calendario",
+          "🎁 Regalo: Manual Vol. I Presupuestar y Rentabilizar (+$25.000)",
         ],
         cta: {
           label: "Solicitar Plan Básico",
@@ -170,8 +171,7 @@ export const constructorProConfig: ProductConfig = {
           "Base de materiales y soluciones constructivas",
           "APU — Análisis de Precios Unitarios",
           "Lista de compras y cubicación por obra",
-          "🎁 App Móvil ECP Medidas de Terreno (JSON 1-clic)",
-          "Curso Excel + Megapack Obras (Bonos de regalo)",
+          "🎁 Regalos: Manual Vol. I y II + 14 Checklists + 11 Actas de Obra (+$95.000)",
         ],
         cta: {
           label: "Solicitar Plan Constructor",
@@ -195,8 +195,7 @@ export const constructorProConfig: ProductConfig = {
           "Carta Gantt + exportación MS Project (XML)",
           "Informe de Obra con fotos y detalle técnico",
           "Calendario laboral + Estados de Pago por avance",
-          "🎁 App Móvil ECP Medidas de Terreno (JSON 1-clic)",
-          "Batería Completa de Bonos (+ $380.000 CLP de regalo)",
+          "🎁 Todo lo del Constructor + Calculadora Excel, App ECP Medidas y Curso de Excel (+$233.000)",
         ],
         cta: {
           label: "Solicitar Plan Pro",
@@ -217,8 +216,8 @@ export const constructorProConfig: ProductConfig = {
           "Herramientas de apoyo Mercado Público",
           "Análisis de conveniencia y oferta técnica",
           "Organización de antecedentes de licitación",
-          "🎁 App Móvil ECP Medidas de Terreno (JSON 1-clic)",
-          "Todos los megabonos + Soporte prioritario",
+          "🎁 Pack completo +$380.000: suma Megapack y Biblioteca Normativa (exclusivos Plus)",
+          "Soporte técnico prioritario",
         ],
         cta: {
           label: "Solicitar Plan Plus",
