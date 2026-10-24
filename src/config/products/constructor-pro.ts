@@ -18,6 +18,7 @@ export const constructorProConfig: ProductConfig = {
   },
   navLinks: [
     { label: "Vs Excel", href: "#vs-excel", external: false },
+    { label: "App Terreno", href: "#app-terreno", external: false },
     { label: "Regalos", href: "#regalos", external: false },
     { label: "Funciones", href: "#funciones", external: false },
     { label: "Planes y Precios", href: "#planes", external: false },
@@ -169,6 +170,8 @@ export const constructorProConfig: ProductConfig = {
           "Base de materiales y soluciones constructivas",
           "APU — Análisis de Precios Unitarios",
           "Lista de compras y cubicación por obra",
+          "🎁 App Móvil ECP Medidas de Terreno (JSON 1-clic)",
+          "Curso Excel + Megapack Obras (Bonos de regalo)",
         ],
         cta: {
           label: "Solicitar Plan Constructor",
@@ -192,6 +195,8 @@ export const constructorProConfig: ProductConfig = {
           "Carta Gantt + exportación MS Project (XML)",
           "Informe de Obra con fotos y detalle técnico",
           "Calendario laboral + Estados de Pago por avance",
+          "🎁 App Móvil ECP Medidas de Terreno (JSON 1-clic)",
+          "Batería Completa de Bonos (+ $380.000 CLP de regalo)",
         ],
         cta: {
           label: "Solicitar Plan Pro",
@@ -212,7 +217,8 @@ export const constructorProConfig: ProductConfig = {
           "Herramientas de apoyo Mercado Público",
           "Análisis de conveniencia y oferta técnica",
           "Organización de antecedentes de licitación",
-          "Soporte técnico prioritario",
+          "🎁 App Móvil ECP Medidas de Terreno (JSON 1-clic)",
+          "Todos los megabonos + Soporte prioritario",
         ],
         cta: {
           label: "Solicitar Plan Plus",

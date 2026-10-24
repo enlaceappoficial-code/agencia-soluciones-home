@@ -121,6 +121,58 @@ const BONUSES = [
       </svg>
     ),
   },
+  {
+    badge: "App Móvil Cloud Web",
+    title: "ECP Medidas de Terreno (Sync JSON)",
+    value: "$49.990 CLP",
+    includedIn: "Gratis desde plan Constructor",
+    description: "Levantamiento de partidas, fotos en terreno y calculadora de áreas irregulares con exportación JSON directa a tu PC.",
+    icon: (
+      <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+        <line x1="12" y1="18" x2="12.01" y2="18" />
+      </svg>
+    ),
+  },
+  {
+    badge: "Curso Completo Digital",
+    title: "Curso Maestro Excel para Construcción",
+    value: "$69.000 CLP",
+    includedIn: "Gratis desde plan Constructor",
+    description: "Aprende fórmulas dinámicas, macros, tablas dinámicas y reportería financiera para constructoras y contratistas.",
+    icon: (
+      <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+      </svg>
+    ),
+  },
+  {
+    badge: "Planillas Maestras XLSX",
+    title: "Megapack de Cubicaciones y Rendimientos",
+    value: "$79.000 CLP",
+    includedIn: "Gratis desde plan Constructor",
+    description: "Bases de cálculo probadas en terreno para movimiento de tierras, hormigones, enfierraduras, techumbres y terminaciones.",
+    icon: (
+      <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      </svg>
+    ),
+  },
+  {
+    badge: "Compendio Normativo PDF",
+    title: "Biblioteca de Normativa y Prevención de Faenas",
+    value: "$69.000 CLP",
+    includedIn: "Gratis en planes Pro y Plus",
+    description: "Compendio de ordenanzas, normas NCh, protocolos de faena, seguridad laboral y modelos de contratos para defensa ante inspecciones.",
+    icon: (
+      <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
 ];
 
 const PRO_FEATURES = [
@@ -243,6 +295,8 @@ const PLANS: PlanItem[] = [
       "Base de materiales y soluciones constructivas",
       "APU — Análisis de Precios Unitarios",
       "Lista de compras por obra",
+      "🎁 App Móvil ECP Medidas (JSON 1-clic)",
+      "Curso Excel + Megapack Obras",
     ],
     cta: "Solicitar",
     badge: null,
@@ -272,6 +326,8 @@ const PLANS: PlanItem[] = [
       "Carta Gantt + exportación MS Project (XML)",
       "Informe de Obra con fotos y detalle técnico",
       "Calendario laboral + Estados de Pago",
+      "🎁 App Móvil ECP Medidas (JSON 1-clic)",
+      "Batería Completa de Bonos (+ $380.000)",
     ],
     cta: "Solicitar",
     badge: "popular",
@@ -301,7 +357,8 @@ const PLANS: PlanItem[] = [
       "Herramientas de apoyo Mercado Público",
       "Análisis de conveniencia con APU",
       "Organizar antecedentes de oferta",
-      "Soporte prioritario",
+      "🎁 App Móvil ECP Medidas (JSON 1-clic)",
+      "Batería Completa de Bonos + Soporte VIP",
     ],
     cta: "Solicitar",
     badge: null,
@@ -515,6 +572,183 @@ export default function ConstructorProPage() {
         </div>
       </section>
 
+      {/* 3.5 NOVEDAD ECOSISTEMA: ECP MEDIDAS DE TERRENO (LA APP MÓVIL HERMANA) */}
+      <section id="app-terreno" className="relative py-24 px-6 border-t border-blue-900/60 bg-gradient-to-b from-[#071630] via-[#091f42] to-[#071a3a] overflow-hidden">
+        {/* Glow de fondo */}
+        <div className="absolute top-1/2 -left-40 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 -right-40 h-[450px] w-[450px] rounded-full bg-orange-500/10 blur-3xl pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-4">
+              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+              Herramienta Hermana Oficial · Ecosistema Móvil ECP
+            </div>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl mb-4 leading-tight text-white">
+              ECP Medidas de Terreno:{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500">
+                Tu celular en la obra conectado a tu PC
+              </span>
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              Mide en terreno con tu teléfono (Android o iPhone), calcula áreas irregulares complejas con triangulación dinámica y exporta un archivo JSON para que tu presupuesto en la computadora se arme solo.
+            </p>
+          </div>
+
+          {/* Sinergia Visual: Terreno ➡️ Puente JSON ➡️ Oficina */}
+          <div className="grid lg:grid-cols-12 gap-8 items-stretch mb-14">
+            {/* Paso 1: Celular en Terreno */}
+            <div className="lg:col-span-5 rounded-3xl bg-[#0c2144]/90 border border-cyan-500/30 p-7 shadow-xl flex flex-col justify-between hover:border-cyan-400/60 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="h-12 w-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl">
+                    📱
+                  </div>
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-700/50">
+                    PASO 1 · EN TERRENO
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  ECP Medidas en tu Celular
+                </h3>
+                <p className="text-sm text-slate-300 mb-5 leading-relaxed">
+                  Realiza el levantamiento inicial de la visita técnica sin internet ni libretas que se pierdan o mojen:
+                </p>
+                <ul className="space-y-3 text-sm text-slate-200">
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-cyan-400 font-bold shrink-0">✓</span>
+                    <span><strong>Calculadora de Terreno Irregular:</strong> Triangulación dinámica (Fórmula de Herón) para calcular metros cuadrados de terrenos de 4, 5 o más lados desiguales.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-cyan-400 font-bold shrink-0">✓</span>
+                    <span><strong>Estructura por Partidas:</strong> Registra cubicaciones en m², m³, ml y unidades organizadas por capítulos de obra.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-cyan-400 font-bold shrink-0">✓</span>
+                    <span><strong>Respaldo Fotográfico:</strong> Adjunta fotos de terreno directo a cada partida para memoria de cálculo.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-cyan-900/60">
+                <div className="text-xs text-cyan-300 font-semibold flex items-center gap-1.5">
+                  <span>⚡ Exportación en 1 clic:</span>
+                  <span className="bg-cyan-500/20 px-2 py-0.5 rounded text-cyan-200">PDF con fotos</span>
+                  <span className="bg-cyan-500/20 px-2 py-0.5 rounded text-cyan-200">CSV</span>
+                  <span className="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold">JSON Maestro</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Puente Mágico Conector */}
+            <div className="lg:col-span-2 flex flex-col items-center justify-center py-4">
+              <div className="hidden lg:flex flex-col items-center gap-3">
+                <div className="h-16 w-0.5 bg-gradient-to-b from-cyan-500 to-orange-500" />
+                <div className="h-14 w-14 rounded-full bg-[#0a1b38] border-2 border-amber-500/60 flex items-center justify-center text-xl shadow-[0_0_25px_rgba(245,160,32,0.4)] animate-bounce">
+                  ⚡
+                </div>
+                <div className="text-center">
+                  <div className="text-xs font-black tracking-wider uppercase text-amber-400">Sincronización</div>
+                  <div className="text-[10px] text-slate-400 font-mono">Archivo JSON</div>
+                </div>
+                <div className="h-16 w-0.5 bg-gradient-to-b from-orange-500 to-cyan-500" />
+              </div>
+              <div className="lg:hidden flex items-center gap-3 my-2">
+                <span className="h-0.5 w-12 bg-cyan-500" />
+                <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold border border-amber-500/40">
+                  ⚡ Sincronización Automática JSON
+                </span>
+                <span className="h-0.5 w-12 bg-orange-500" />
+              </div>
+            </div>
+
+            {/* Paso 2: Computadora en Oficina */}
+            <div className="lg:col-span-5 rounded-3xl bg-[#0c2144]/90 border border-orange-500/30 p-7 shadow-xl flex flex-col justify-between hover:border-orange-400/60 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="h-12 w-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-2xl">
+                    💻
+                  </div>
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-orange-950/80 text-orange-300 border border-orange-700/50">
+                    PASO 2 · EN OFICINA / PC
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Enlace Constructor Pro en PC
+                </h3>
+                <p className="text-sm text-slate-300 mb-5 leading-relaxed">
+                  Importa el archivo de la visita y genera el presupuesto comercial definitivo con respaldo exacto:
+                </p>
+                <ul className="space-y-3 text-sm text-slate-200">
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-orange-400 font-bold shrink-0">✓</span>
+                    <span><strong>Importación Inmediata:</strong> Abres tu software en Windows, cargas el JSON y todas las partidas y cubicaciones quedan volcadas en pantalla.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-orange-400 font-bold shrink-0">✓</span>
+                    <span><strong>APU y Costos Reales:</strong> Aplica precios unitarios a cada partida, calcula materiales, mano de obra, leyes sociales y margen neto.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-orange-400 font-bold shrink-0">✓</span>
+                    <span><strong>Cierre y Envío:</strong> Exporta tu presupuesto en PDF con logo corporativo y envíalo al cliente por WhatsApp en menos de 3 minutos.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-orange-900/60">
+                <div className="text-xs text-orange-300 font-semibold">
+                  🎯 Slogan: <em>"Del terreno a tu presupuesto en un solo clic, sin pasar en limpio libretas de papel."</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tarjeta de Acceso Web + Código QR */}
+          <div className="rounded-3xl p-8 bg-gradient-to-r from-[#0d2246] via-[#112d5e] to-[#0d2246] border-2 border-cyan-500/30 shadow-[0_0_40px_rgba(6,182,212,0.15)] flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold tracking-wider uppercase mb-3 border border-emerald-500/30">
+                100% Web App · Android & iPhone · Sin Instaladores Pesados
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Pruébala gratis ahora mismo en tu celular
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                No necesitas descargar archivos de tiendas ni registrarte. Abre el enlace directo o apunta con la cámara de tu teléfono al código QR para usar la calculadora de terreno en tu próxima visita técnica.
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="/medidas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5"
+                >
+                  <span>📲</span> Abrir App Móvil de Terreno
+                </a>
+                <span className="text-xs text-emerald-400 font-medium">
+                  🎁 Incluida gratis de por vida en planes Constructor y Pro
+                </span>
+              </div>
+            </div>
+
+            <div className="shrink-0 flex flex-col items-center bg-[#071630] p-4 rounded-2xl border border-cyan-500/40 shadow-inner">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ecosistema/qr-ecp-medidas.png"
+                alt="QR ECP Medidas de Terreno"
+                className="w-32 h-32 rounded-xl bg-white p-1.5 shadow-md"
+              />
+              <span className="text-[11px] font-bold text-cyan-300 mt-2 text-center">
+                Escanea con tu celular 📱
+              </span>
+              <span className="text-[10px] text-slate-400">
+                redenlace.cl/medidas
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. REGALOS DE BIENVENIDA (CP BONUS PACK) 1:1 RECUPERADO */}
       <section id="regalos" className="py-24 px-6 border-t border-blue-900/60 bg-gradient-to-b from-[#071a3a] via-[#0a1e42] to-[#071a3a]">
         <div className="max-w-6xl mx-auto">
@@ -533,15 +767,15 @@ export default function ConstructorProPage() {
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl mb-4 leading-tight text-white">
               Al adquirir ECP, te llevas hasta{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                $114.000 CLP en Regalos
+                +$380.000 CLP en Regalos
               </span>
             </h2>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              Queremos que tengas la mejor experiencia. Dependiendo del plan que contrates, te llevarás gratis partes o la totalidad de nuestro <strong>Pack Digital Completo</strong>. Además, cada ítem está disponible para compra individual.
+              Queremos que tengas la mejor experiencia. Dependiendo del plan que contrates, te llevarás gratis partes o la totalidad de nuestro <strong>Pack Digital Maestro</strong>, incluyendo la App Móvil ECP Medidas, cursos y megapacks de ingeniería.
             </p>
           </div>
 
-          {/* Grid de 6 Tarjetas (5 Bonus + 1 Resumen) */}
+          {/* Grid de Tarjetas (9 Bonus + 1 Resumen) */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {BONUSES.map((bonus, idx) => (
               <div
@@ -588,7 +822,7 @@ export default function ConstructorProPage() {
               </div>
             ))}
 
-            {/* Tarjeta Resumen Total (Pro y Plus) */}
+            {/* Tarjeta Resumen Total (Constructor, Pro y Plus) */}
             <div className="relative bg-gradient-to-br from-orange-500/20 via-[#0d2550] to-blue-900/30 border-2 border-orange-500/50 rounded-3xl p-6 flex flex-col justify-between shadow-[0_0_30px_rgba(245,160,32,0.25)]">
               <div>
                 <div className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 mb-4">
@@ -597,22 +831,22 @@ export default function ConstructorProPage() {
                     <rect x="2" y="7" width="20" height="5" />
                     <line x1="12" y1="22" x2="12" y2="7" />
                   </svg>
-                  Pack Completo Incluido
+                  Batería Completa de Bonos
                 </div>
                 <h3 className="font-display font-extrabold text-2xl mb-2 text-white">
-                  Resumen del Pack (Pro y Plus)
+                  Resumen de Bonos Incluidos
                 </h3>
                 <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  Recibes todos los manuales, guías, checklists y la calculadora Excel directamente en tu casilla de correo sin costo adicional al contratar un plan Pro o Plus.
+                  Manuales, checklists, planillas, App Móvil ECP Medidas de Terreno, curso de Excel y megapack de obras entregados sin costo adicional según tu plan.
                 </p>
               </div>
 
               <div className="p-4 rounded-2xl bg-[#071630]/90 border border-orange-500/30 text-center">
                 <div className="text-xs text-slate-400 uppercase font-bold tracking-wider mb-1">
-                  Valor Total del Regalo
+                  Valor Total de los Bonos
                 </div>
                 <div className="text-2xl font-black text-slate-400 line-through opacity-70">
-                  $114.000 CLP
+                  +$380.000 CLP
                 </div>
                 <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mt-1">
                   ¡GRATIS!
@@ -670,6 +904,44 @@ export default function ConstructorProPage() {
             <p className="text-slate-300 leading-relaxed">
               Planes adaptables a tu flujo de caja. <strong className="text-white">Ahorra más eligiendo el plan anual.</strong>
             </p>
+          </div>
+
+          {/* BANNER / TARJETA TRIPWIRE: KIT DIGITAL ($14.990 CLP) */}
+          <div className="mb-14 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-[#0d2246] via-[#102c5c] to-[#0d2246] border-2 border-amber-500/40 shadow-[0_0_40px_rgba(245,160,32,0.15)] relative overflow-hidden">
+            <div className="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-44 h-44 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+              <div className="max-w-2xl text-left">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold tracking-wider uppercase mb-3 border border-amber-500/30">
+                  ⚡ Oferta de Entrada · Ideal para Celular y Tablet
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                  Kit Digital del Constructor Profesional
+                </h3>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                  ¿Aún no necesitas el software para Windows o prefieres empezar con las guías y planillas maestras? Llévate los 2 Manuales ECP (147 págs), 14 Checklists de Terreno, 11 Actas de Obra, la Calculadora de Costos Excel con APU y el Curso de Excel por un único pago.
+                </p>
+                <div className="p-3.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-xs sm:text-sm text-amber-300 flex items-center gap-2">
+                  <span className="text-lg">🎁</span>
+                  <span><strong>GARANTÍA DE ABONO AL 100%:</strong> Tus $14.990 quedan abonados a tu favor si decides activar el Software Enlace Constructor Pro para PC en cualquier momento.</span>
+                </div>
+              </div>
+
+              <div className="shrink-0 flex flex-col items-center sm:items-end text-center sm:text-right">
+                <div className="text-xs text-slate-400 line-through mb-1">Precio regular: $45.000 CLP</div>
+                <div className="text-3xl sm:text-4xl font-black text-white mb-1">
+                  $14.990 <span className="text-xs sm:text-sm font-normal text-slate-300">CLP · Pago único</span>
+                </div>
+                <div className="text-xs text-emerald-400 font-semibold mb-4">Sin suscripción · Entrega inmediata</div>
+                <a
+                  href="https://wa.me/56941278725?text=Hola%20John,%20quiero%20comprar%20el%20Kit%20Digital%20del%20Constructor%20Profesional%20por%20$14.990%20CLP%20con%20transferencia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 shadow-lg hover:shadow-orange-500/25 transition-all transform hover:-translate-y-0.5"
+                >
+                  <span>📲</span> Comprar Kit por WhatsApp ($14.990)
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Selector de facturación 3 modos */}
