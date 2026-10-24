@@ -822,34 +822,64 @@ export default function ConstructorProPage() {
               </div>
             ))}
 
-            {/* Tarjeta Resumen Total (Constructor, Pro y Plus) */}
-            <div className="relative bg-gradient-to-br from-orange-500/20 via-[#0d2550] to-blue-900/30 border-2 border-orange-500/50 rounded-3xl p-6 flex flex-col justify-between shadow-[0_0_30px_rgba(245,160,32,0.25)]">
-              <div>
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 mb-4">
-                  <svg className="h-3.5 w-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                    <polyline points="20 12 20 22 4 22 4 12" />
-                    <rect x="2" y="7" width="20" height="5" />
-                    <line x1="12" y1="22" x2="12" y2="7" />
-                  </svg>
-                  Batería Completa de Bonos
-                </div>
-                <h3 className="font-display font-extrabold text-2xl mb-2 text-white">
-                  Resumen de Bonos Incluidos
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  Manuales, checklists, planillas, App Móvil ECP Medidas de Terreno, curso de Excel y megapack de obras entregados sin costo adicional según tu plan.
-                </p>
-              </div>
+            {/* Banner Resumen Total Horizontal (Ocupa toda la fila) */}
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 relative bg-gradient-to-r from-[#0d2550] via-[#102c5c] to-[#0d2550] border-2 border-orange-500/50 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(245,160,32,0.25)] overflow-hidden">
+              {/* Glow decorativo de fondo */}
+              <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 transform -translate-x-12 translate-y-12 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="p-4 rounded-2xl bg-[#071630]/90 border border-orange-500/30 text-center">
-                <div className="text-xs text-slate-400 uppercase font-bold tracking-wider mb-1">
-                  Valor Total de los Bonos
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+                <div className="max-w-2xl text-left">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 mb-4 shadow-sm">
+                    <svg className="h-4 w-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                      <polyline points="20 12 20 22 4 22 4 12" />
+                      <rect x="2" y="7" width="20" height="5" />
+                      <line x1="12" y1="22" x2="12" y2="7" />
+                    </svg>
+                    Batería Completa de Bonos · Incluida en tu Licencia
+                  </div>
+
+                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl mb-3 text-white">
+                    Resumen de Bonos Incluidos
+                  </h3>
+
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+                    Recibes todos los manuales maestros, guías, checklists, actas legales, la calculadora de costos Excel, la <strong>App Móvil ECP Medidas de Terreno</strong>, el curso completo de Excel y los megapacks de obras civiles directamente en tu correo y WhatsApp sin costo adicional según tu plan.
+                  </p>
+
+                  {/* Pills de contenido rápido */}
+                  <div className="flex flex-wrap gap-2.5">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
+                      <span className="text-emerald-400">✓</span> 2 Manuales ECP (147 págs)
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
+                      <span className="text-emerald-400">✓</span> 14 Checklists + 11 Actas
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
+                      <span className="text-emerald-400">✓</span> App Móvil ECP Medidas
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
+                      <span className="text-emerald-400">✓</span> Curso de Excel Completo
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-blue-950/80 border border-blue-800/60 text-slate-200">
+                      <span className="text-emerald-400">✓</span> Planilla APU + Megapack
+                    </span>
+                  </div>
                 </div>
-                <div className="text-2xl font-black text-slate-400 line-through opacity-70">
-                  +$380.000 CLP
-                </div>
-                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mt-1">
-                  ¡GRATIS!
+
+                <div className="shrink-0 w-full sm:w-auto p-6 sm:p-8 rounded-3xl bg-[#071630]/95 border border-orange-500/40 text-center shadow-2xl flex flex-col items-center justify-center min-w-[260px]">
+                  <div className="text-xs text-slate-400 uppercase font-black tracking-widest mb-1.5">
+                    Valor Total de los Bonos
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-black text-slate-400 line-through opacity-65 mb-1">
+                    +$380.000 CLP
+                  </div>
+                  <div className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 tracking-tight">
+                    ¡GRATIS!
+                  </div>
+                  <div className="text-xs text-emerald-400 font-semibold mt-2 flex items-center gap-1">
+                    <span>✨</span> Sin costos ocultos
+                  </div>
                 </div>
               </div>
             </div>
