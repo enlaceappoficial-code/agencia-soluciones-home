@@ -177,49 +177,84 @@ const BONUSES = [
 
 const PRO_FEATURES = [
   {
+    id: "01",
     icon: "📋",
+    tag: "Comercial & Ventas",
     title: "Presupuestos profesionales",
     description: "Catálogo de partidas, IVA y UF automáticos, múltiples plantillas PDF. Capítulos, numeración jerárquica y envío por WhatsApp con PDF adjunto.",
+    detail: "Crea propuestas formales e impecables en minutos. Configura membrete, logo, condiciones comerciales y genera el PDF listo para firmar o enviar directo al WhatsApp del mandante.",
   },
   {
+    id: "02",
     icon: "⚙️",
+    tag: "Costos & APU",
     title: "APU — Precios Unitarios",
-    description: "Costo real por partida: materiales, mano de obra, GG y utilidad. Más de 300 partidas, APU, soluciones constructivas y plantillas rápidas validadas.",
+    description: "Costo real por partida: materiales, mano de obra, leyes sociales, GG y utilidad. Más de 300 partidas, APU y plantillas rápidas validadas.",
+    detail: "Desglosa cada partida al centavo: rendimiento de cuadrillas, valores de materiales actualizados al mercado chileno, leyes sociales y margen de utilidad garantizado.",
   },
   {
+    id: "03",
     icon: "📏",
+    tag: "Cálculo Técnico",
     title: "Cubicación inteligente",
-    description: "Ingresa dimensiones, obtén materiales calculados al instante. Optimizador de cortes de planchas incluido.",
+    description: "Ingresa dimensiones lineales, áreas o volúmenes y obtén materiales calculados al instante con optimizador de cortes de planchas incluido.",
+    detail: "Evita mermas y sobrecostos. El motor calcula rendimientos de hormigón, morteros, fierro, madera y genera patrones óptimos de corte para planchas de OSB, yeso-cartón y terciados.",
   },
   {
+    id: "04",
+    icon: "📱",
+    tag: "Terreno & Móvil",
+    title: "App Móvil de Terreno",
+    description: "Levantamiento directo en obra con celular, cálculo de terrenos irregulares con fórmula de Herón y sincronización JSON en 1 clic con tu PC.",
+    detail: "Nuestra herramienta hermana para Android e iPhone: mide paños irregulares con triangulación de lados, registra metros cuadrados y carga la visita completa a ECP sin transcribir libretas.",
+  },
+  {
+    id: "05",
     icon: "⚖️",
+    tag: "Licitaciones",
     title: "Licitaciones Mercado Público",
-    description: "Herramientas de apoyo para organizar antecedentes, analizar oportunidades y preparar información de apoyo para una oferta.",
+    description: "Herramientas de apoyo para organizar antecedentes técnicos, calcular ofertas competitivas y preparar documentación licitatoria oficial.",
+    detail: "Estructura tus propuestas para Mercado Público y privados. Verifica bases técnicas, consolida formularios de oferta y asegura no dejar ningún ítem fuera de presupuesto.",
   },
   {
+    id: "06",
     icon: "📁",
+    tag: "Legal & Contratos",
     title: "Documentos de Obra",
-    description: "Carta de presentación, contrato con cláusulas e informe de obra con fotos y detalle técnico por partida en PDF profesional.",
+    description: "Carta de presentación comercial, contrato de construcción con cláusulas e informe de obra con fotos y detalle técnico por partida en PDF.",
+    detail: "Protege tu empresa con contratos formales pre-redactados, cartas de entrega, registros fotográficos de avance y minutas técnicas listas para firmar ante notario o mandante.",
   },
   {
+    id: "07",
     icon: "💳",
+    tag: "Control Financiero",
     title: "Pagos y Estados de Avance",
-    description: "Registra cobros, genera estados de pago por avance físico de cada partida y acta de recepción.",
+    description: "Registra cobros, genera estados de pago por avance físico acumulado de cada partida y actas oficiales de recepción.",
+    detail: "Ten el control del flujo de caja de la obra. Emite certificados de pago parciales vinculados a porcentajes de ejecución real para cobrar a tiempo y sin objeciones del cliente.",
   },
   {
+    id: "08",
     icon: "📊",
+    tag: "Planificación",
     title: "Carta Gantt con MS Project",
-    description: "Carta Gantt con tareas, capítulos, dependencias, calendario laboral, días no laborales configurables y exportación XML compatible con Microsoft Project.",
+    description: "Carta Gantt con tareas, capítulos, dependencias, calendario laboral chileno y exportación nativa XML compatible con Microsoft Project.",
+    detail: "Planifica los tiempos de obra con precisión. Configura días feriados, rutas críticas, hitos de entrega y abre tu cronograma directamente en Microsoft Project sin conversiones.",
   },
   {
+    id: "09",
     icon: "💾",
+    tag: "Productividad",
     title: "Agilidad y Guardado Continuo",
-    description: "Guardado en vivo sin salir de la pantalla, borradores sin cliente obligatorio, función deshacer/rehacer y edición ágil.",
+    description: "Guardado en vivo sin salir de la pantalla, borradores rápidos sin cliente obligatorio y función deshacer/rehacer instantánea.",
+    detail: "Diseñado para el ritmo real de un constructor: no pierdes ni un solo dato si se cierra la ventana o se corta la energía. Presupuesta ideas rápidas y asígnales cliente después.",
   },
   {
+    id: "10",
     icon: "🗄️",
+    tag: "Seguridad Local",
     title: "Respaldo y Restauración",
-    description: "Sistema de respaldo y restauración de datos local para proteger siempre tu información técnica y presupuestos.",
+    description: "Sistema de respaldo y restauración de datos local para proteger siempre tu información técnica y presupuestos en tu disco duro.",
+    detail: "Tus datos y presupuestos son tuyos. Crea copias de seguridad en un archivo único en tu PC o pendrive y restaura cualquier versión en segundos, incluso sin conexión a internet.",
   },
 ];
 
@@ -396,6 +431,8 @@ const COMPARISON_ROWS = [
 export default function ConstructorProPage() {
   const [period, setPeriod] = useState<BillingPeriod>("anual");
   const [showApp, setShowApp] = useState(false);
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+  const [selectedFeature, setSelectedFeature] = useState<typeof PRO_FEATURES[0] | null>(null);
 
   return (
     <main className="min-h-screen bg-[#071a3a] text-slate-100 font-sans selection:bg-orange-500 selection:text-slate-950 pt-16">
@@ -930,35 +967,216 @@ export default function ConstructorProPage() {
         </div>
       </section>
 
-      {/* 5. FUNCIONALIDADES 1:1 CON SUS 9 MÓDULOS */}
-      <section id="funciones" className="py-24 px-6 border-t border-blue-900/60 bg-[#071630]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-400 mb-3">Módulos incluidos</p>
-            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight text-white">
-              Todo lo que necesitas
-              <br />
-              en <span className="text-orange-500">una sola herramienta</span>
-            </h2>
+      {/* 5. MÓDULOS DEL ECOSISTEMA CON CARRUSEL INTERACTIVO / CARTAS DESPLAZABLES */}
+      <section id="funciones" className="py-16 sm:py-20 border-t border-blue-900/60 bg-[#071630] relative overflow-hidden">
+        {/* Glows decorativos */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-6 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-bold tracking-wider uppercase mb-3">
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                10 Módulos Integrados · Suite Completa
+              </div>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight text-white">
+                Todo lo que necesitas en{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+                  una sola herramienta
+                </span>
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 mt-2 max-w-2xl">
+                Desde el levantamiento con celular en terreno hasta el presupuesto maestro y firma de contratos en PC.
+              </p>
+            </div>
+
+            {/* Controles interactivos: Pausar/Reanudar */}
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => setIsMarqueePaused(!isMarqueePaused)}
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#091f42] border border-blue-800/70 hover:border-orange-500/60 text-xs font-semibold text-slate-200 hover:text-white transition-all shadow-md active:scale-95 cursor-pointer"
+                title={isMarqueePaused ? "Reanudar desplazamiento" : "Pausar desplazamiento"}
+              >
+                <span>{isMarqueePaused ? "▶️" : "⏸️"}</span>
+                <span>{isMarqueePaused ? "Reanudar movimiento" : "Pausar movimiento"}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* CONTENEDOR DEL CARRUSEL / MARQUEE DE CARTAS COMPACTAS */}
+        <div className="relative w-full overflow-hidden pause-on-hover py-2">
+          {/* Fades degradados en los bordes para sensación infinita */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#071630] via-[#071630]/90 to-transparent z-20" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#071630] via-[#071630]/90 to-transparent z-20" />
+
+          {/* FILA 1: Se desplaza hacia la izquierda */}
+          <div
+            className="animate-marquee-left flex gap-4 mb-4"
+            style={{ animationPlayState: isMarqueePaused ? "paused" : undefined }}
+          >
+            {[...PRO_FEATURES.slice(0, 5), ...PRO_FEATURES.slice(0, 5)].map((f, idx) => (
+              <div
+                key={`row1-${f.id}-${idx}`}
+                onClick={() => setSelectedFeature(f)}
+                className="w-[290px] sm:w-[330px] shrink-0 p-4 rounded-2xl bg-gradient-to-br from-[#0a1e3f]/95 to-[#071630] border border-blue-800/60 hover:border-orange-500/80 hover:bg-[#0e2752] hover:shadow-[0_0_22px_rgba(245,160,32,0.25)] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between cursor-pointer group select-none text-left"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="grid h-8 w-8 place-items-center rounded-xl bg-orange-500/15 text-lg group-hover:scale-110 group-hover:bg-orange-500/25 transition-all">
+                        {f.icon}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded-md border border-orange-500/20">
+                        {f.tag}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-slate-500 group-hover:text-slate-300">
+                      #{f.id}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-sm sm:text-base text-white group-hover:text-orange-300 transition-colors mb-1 line-clamp-1">
+                    {f.title}
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">
+                    {f.description}
+                  </p>
+                </div>
+                <div className="mt-3 pt-2.5 border-t border-blue-900/50 flex items-center justify-between text-[11px]">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[10px]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Incluido en ECP
+                  </span>
+                  <span className="text-slate-400 group-hover:text-orange-400 transition-colors text-[10px] font-medium flex items-center gap-1">
+                    Ver más <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRO_FEATURES.map((f) => (
+          {/* FILA 2: Se desplaza hacia la derecha */}
+          <div
+            className="animate-marquee-right flex gap-4"
+            style={{ animationPlayState: isMarqueePaused ? "paused" : undefined }}
+          >
+            {[...PRO_FEATURES.slice(5, 10), ...PRO_FEATURES.slice(5, 10)].map((f, idx) => (
               <div
-                key={f.title}
-                className="group bg-[#091f42] border border-blue-900/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-xl"
+                key={`row2-${f.id}-${idx}`}
+                onClick={() => setSelectedFeature(f)}
+                className="w-[290px] sm:w-[330px] shrink-0 p-4 rounded-2xl bg-gradient-to-br from-[#0a1e3f]/95 to-[#071630] border border-blue-800/60 hover:border-orange-500/80 hover:bg-[#0e2752] hover:shadow-[0_0_22px_rgba(245,160,32,0.25)] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between cursor-pointer group select-none text-left"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-orange-500/15 text-2xl mb-5 transition-all group-hover:scale-110">
-                  {f.icon}
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="grid h-8 w-8 place-items-center rounded-xl bg-orange-500/15 text-lg group-hover:scale-110 group-hover:bg-orange-500/25 transition-all">
+                        {f.icon}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded-md border border-orange-500/20">
+                        {f.tag}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-slate-500 group-hover:text-slate-300">
+                      #{f.id}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-sm sm:text-base text-white group-hover:text-orange-300 transition-colors mb-1 line-clamp-1">
+                    {f.title}
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">
+                    {f.description}
+                  </p>
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2 text-white group-hover:text-orange-400 transition-colors">
-                  {f.title}
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">{f.description}</p>
+                <div className="mt-3 pt-2.5 border-t border-blue-900/50 flex items-center justify-between text-[11px]">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[10px]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Incluido en ECP
+                  </span>
+                  <span className="text-slate-400 group-hover:text-orange-400 transition-colors text-[10px] font-medium flex items-center gap-1">
+                    Ver más <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* PIE CON INDICACIÓN INTERACTIVA */}
+        <div className="max-w-6xl mx-auto px-6 mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+          <div className="flex items-center gap-2">
+            <span>💡</span>
+            <span>Posa el cursor o mantén presionado para pausar las cartas. Haz clic para ver el detalle en profundidad.</span>
+          </div>
+          <div className="flex items-center gap-2 text-slate-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-orange-400 animate-ping" />
+            <span>Todos los módulos activos desde el primer día</span>
+          </div>
+        </div>
+
+        {/* MODAL DETALLE INTERACTIVO DE MÓDULO */}
+        {selectedFeature && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity"
+            onClick={() => setSelectedFeature(null)}
+          >
+            <div
+              className="relative w-full max-w-lg p-6 sm:p-7 rounded-3xl bg-[#091f42] border-2 border-orange-500/50 shadow-[0_0_60px_rgba(245,160,32,0.35)] text-left"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedFeature(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-blue-950/90 border border-blue-800 text-slate-400 hover:text-white flex items-center justify-center text-base font-bold transition-colors cursor-pointer"
+                title="Cerrar"
+              >
+                ✕
+              </button>
+              <div className="flex items-center gap-3.5 mb-4">
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-orange-500/20 text-3xl border border-orange-500/40 shrink-0">
+                  {selectedFeature.icon}
+                </span>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-orange-400 uppercase tracking-wider bg-orange-500/10 px-2 py-0.5 rounded-md border border-orange-500/25">
+                      {selectedFeature.tag}
+                    </span>
+                    <span className="text-xs font-mono font-bold text-slate-400">#{selectedFeature.id}</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">{selectedFeature.title}</h3>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-200 leading-relaxed mb-4">
+                {selectedFeature.description}
+              </p>
+
+              <div className="p-4 rounded-2xl bg-blue-950/80 border border-blue-800/80 mb-5">
+                <div className="text-xs font-bold uppercase tracking-wider text-orange-300 mb-1 flex items-center gap-1.5">
+                  <span>⚡</span> ¿Cómo te ayuda en la práctica?
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  {selectedFeature.detail}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between pt-3 border-t border-blue-900/60">
+                <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Módulo 100% Nativo en ECP
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedFeature(null)}
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-bold text-xs hover:brightness-110 transition-all shadow-md cursor-pointer"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* 6. PLANES Y PRECIOS 1:1 CON SELECTOR INTERACTIVO (ANUAL / SEMESTRAL / TRIMESTRAL) */}
