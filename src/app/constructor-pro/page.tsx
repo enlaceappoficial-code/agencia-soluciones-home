@@ -433,6 +433,7 @@ export default function ConstructorProPage() {
   const [showApp, setShowApp] = useState(false);
   const [isMarqueePaused, setIsMarqueePaused] = useState(false);
   const [selectedFeature, setSelectedFeature] = useState<typeof PRO_FEATURES[0] | null>(null);
+  const [installTab, setInstallTab] = useState<"android" | "ios">("android");
 
   return (
     <main className="min-h-screen bg-[#071a3a] text-slate-100 font-sans selection:bg-orange-500 selection:text-slate-950 pt-16">
@@ -835,6 +836,134 @@ export default function ConstructorProPage() {
                 medidas.redenlace.cl
               </span>
             </div>
+          </div>
+
+          {/* GUÍA INTERACTIVA: CÓMO INSTALAR EN TU CELULAR EN 10 SEGUNDOS */}
+          <div className="mt-8 rounded-3xl p-6 sm:p-8 bg-[#091f42]/90 border border-cyan-500/30 shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-blue-900/60">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold tracking-wider uppercase mb-2 border border-cyan-500/30">
+                  <span>📲</span> Acceso Directo Oficial · PWA Móvil
+                </div>
+                <h4 className="text-xl sm:text-2xl font-bold text-white">
+                  Cómo instalarla en tu teléfono en 10 segundos
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                  Funciona como una app nativa: ícono oficial de ECP en tu pantalla, sin ocupar espacio de memoria, abre a pantalla completa y trabaja offline.
+                </p>
+              </div>
+
+              {/* Selector de Sistema Operativo */}
+              <div className="flex items-center gap-2 bg-[#071630] p-1.5 rounded-2xl border border-blue-900/80 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setInstallTab("android")}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+                    installTab === "android"
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-md"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  <span>🤖</span> Android (Chrome)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInstallTab("ios")}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+                    installTab === "ios"
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-950 shadow-md"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  <span>🍏</span> iPhone (Safari)
+                </button>
+              </div>
+            </div>
+
+            {/* Pasos según pestaña activa */}
+            {installTab === "android" ? (
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-black mb-3">
+                      PASO 1
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Abre en Chrome</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Escanea el código QR con tu cámara o abre <strong className="text-cyan-300">medidas.redenlace.cl</strong> en Google Chrome desde tu celular.
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-slate-500 mt-4 flex items-center gap-1">🌐 Navegador Google Chrome</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.15)] flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 text-xs font-black mb-3">
+                      PASO 2
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Toca "Instalar"</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      En la barra inferior te aparecerá <em>"Instalar y crear acceso directo"</em>. Si no sale, toca los <strong>3 puntos (⋮)</strong> arriba a la derecha y presiona <strong>"Instalar aplicación"</strong>.
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-emerald-400 font-semibold mt-4 flex items-center gap-1">📲 Aviso emergente oficial</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-black mb-3">
+                      PASO 3
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">¡Listo en tu escritorio!</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Confirma en <strong>"Instalar"</strong>. Se creará el ícono oficial con el logo 3D de ECP directo en la pantalla de inicio de tu teléfono.
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-emerald-400 font-semibold mt-4 flex items-center gap-1">✨ Sin pasar por Play Store</span>
+                </div>
+              </div>
+            ) : (
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/20 text-cyan-400 text-xs font-black mb-3">
+                      PASO 1
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Abre en Safari</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Escanea el QR con la cámara de tu iPhone o abre <strong className="text-cyan-300">medidas.redenlace.cl</strong> en <strong>Safari</strong> (imprescindible en iOS).
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-slate-500 mt-4 flex items-center gap-1">🍏 Navegador Apple Safari</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.15)] flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-cyan-500 text-slate-950 text-xs font-black mb-3">
+                      PASO 2
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Toca "Compartir"</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      En la barra inferior de Safari, toca el botón central de <strong>Compartir</strong> (el cuadrado con la flecha apuntando hacia arriba ⬆️).
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-cyan-400 font-semibold mt-4 flex items-center gap-1">📤 Menú Compartir</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/20 text-cyan-400 text-xs font-black mb-3">
+                      PASO 3
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">"Agregar a inicio"</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Baja en el menú y selecciona <strong>"Agregar a pantalla de inicio"</strong>. Toca <em>Agregar</em> arriba a la derecha y ¡listo!
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-cyan-400 font-semibold mt-4 flex items-center gap-1">✨ Sin pasar por App Store</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
