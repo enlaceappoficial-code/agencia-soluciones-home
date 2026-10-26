@@ -244,9 +244,39 @@ export default function HerramientasDropdown() {
               const isExternal = item.external;
               const content = (
                 <div className="group/item flex items-center gap-3 rounded-xl px-2.5 py-2 transition-all duration-200 hover:bg-white/5 active:bg-white/10 cursor-pointer">
-                  {/* Contenedor de Logo o Ícono */}
-                  <div className="grid h-11 w-11 place-items-center rounded-xl shrink-0 bg-white/5 border border-white/10 group-hover/item:border-blue-500/30 transition-colors">
-                    {item.logo ? (
+                  {/* Contenedor de Logo o Ícono con Mockup de Dispositivo para ECP y Medidas */}
+                  <div className="grid h-11 w-11 place-items-center rounded-xl shrink-0 bg-white/5 border border-white/10 group-hover/item:border-blue-500/30 transition-colors overflow-hidden">
+                    {item.id === 'constructor-pro' ? (
+                      /* ECP: Logo dentro de un Monitor / Computadora PC */
+                      <div className="flex flex-col items-center justify-center -mt-0.5" title="Software para Computadora (Windows)">
+                        <div className="w-8 h-6 rounded-md bg-[#071630] border-[1.5px] border-orange-500/80 shadow-[0_0_10px_rgba(245,160,32,0.3)] flex items-center justify-center overflow-hidden">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={item.logo}
+                            alt="ECP PC"
+                            className="h-4 w-4 object-contain"
+                          />
+                        </div>
+                        {/* Soporte y Base de la pantalla */}
+                        <div className="w-1.5 h-1 bg-orange-500/70" />
+                        <div className="w-4 h-0.5 rounded-full bg-orange-500/90" />
+                      </div>
+                    ) : item.id === 'ecp-medidas' ? (
+                      /* ECP Medidas: Logo dentro de un Celular / Smartphone */
+                      <div className="w-5 h-8 rounded-[6px] bg-[#071630] border-[1.5px] border-cyan-400/90 shadow-[0_0_10px_rgba(6,182,212,0.35)] flex flex-col items-center justify-between py-0.5" title="App para Celular (Móvil)">
+                        {/* Notch superior */}
+                        <div className="w-2 h-0.5 rounded-full bg-cyan-400/80" />
+                        {/* Logo ECP en pantalla */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={item.logo}
+                          alt="ECP Móvil"
+                          className="h-3.5 w-3.5 object-contain"
+                        />
+                        {/* Barra inferior */}
+                        <div className="w-2.5 h-0.5 rounded-full bg-cyan-400/60" />
+                      </div>
+                    ) : item.logo ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={item.logo}
@@ -254,8 +284,6 @@ export default function HerramientasDropdown() {
                         className={`object-contain ${
                           item.id === 'red-social'
                             ? 'h-8 w-8 filter drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]'
-                            : item.id === 'constructor-pro'
-                            ? 'h-8 w-8'
                             : 'h-9 w-9'
                         }`}
                       />
