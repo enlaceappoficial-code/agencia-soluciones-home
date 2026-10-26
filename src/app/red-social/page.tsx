@@ -10,6 +10,8 @@ const WHATSAPP_URL =
   "https://wa.me/56941278725?text=Hola!%20Vi%20ENLACE%20Red%20Social%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n.";
 
 export default function RedSocialPage() {
+  const [installTab, setInstallTab] = useState<"android" | "ios">("android");
+  const [showAppPreview, setShowAppPreview] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({
     nombre: "",
@@ -46,9 +48,9 @@ export default function RedSocialPage() {
           </div>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-300 text-xs md:text-sm font-medium mb-6 backdrop-blur-md shadow-inner">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs md:text-sm font-medium mb-6 backdrop-blur-md shadow-inner">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Disponible en Google Play · Hecho en Chile 🇨🇱</span>
+            <span>🌟 Red Social Oficial de Emprendimientos · Ahora disponible en Web & PWA</span>
           </div>
 
           {/* Main Title */}
@@ -75,23 +77,33 @@ export default function RedSocialPage() {
           {/* Primary Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <a
-              href={PLAY_STORE_URL}
+              href="https://app.redenlace.cl"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold text-base shadow-[0_10px_30px_rgba(37,99,235,0.35)] hover:shadow-[0_15px_40px_rgba(37,99,235,0.5)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black text-base shadow-[0_10px_30px_rgba(16,185,129,0.35)] hover:shadow-[0_15px_40px_rgba(16,185,129,0.5)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M3.609 1.814L13.793 12 3.61 22.186c-.365-.33-.61-.83-.61-1.42V3.234c0-.59.245-1.09.61-1.42zm11.24 11.24l2.58 2.58-13.04 7.53 10.46-10.11zm0-2.108L4.39 1.056l13.04 7.53-2.58 2.36zm1.48 1.054l4.08 2.355c.92.53.92 1.402 0 1.933l-4.08 2.355-2.22-2.22 2.22-2.423z"/>
-              </svg>
-              <span>Descargar en Google Play</span>
+              <span className="text-xl">🚀</span>
+              <span>Abrir App Web / PWA Oficial</span>
             </a>
 
             <a
-              href="#que-es"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 font-semibold text-base transition-colors"
+              href="#app-pwa"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 font-semibold text-base transition-colors"
             >
-              <span>Conocer cómo funciona</span>
+              <span>📲 Cómo instalar en tu celular</span>
               <span>↓</span>
+            </a>
+
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 font-semibold text-sm transition-all"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186c-.365-.33-.61-.83-.61-1.42V3.234c0-.59.245-1.09.61-1.42zm11.24 11.24l2.58 2.58-13.04 7.53 10.46-10.11zm0-2.108L4.39 1.056l13.04 7.53-2.58 2.36zm1.48 1.054l4.08 2.355c.92.53.92 1.402 0 1.933l-4.08 2.355-2.22-2.22 2.22-2.423z"/>
+              </svg>
+              <span>Google Play</span>
             </a>
           </div>
 
@@ -242,6 +254,289 @@ export default function RedSocialPage() {
                 Capturas reales de la aplicación ENLACE en Android
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECCIÓN APP PWA Y ACCESO MÓVIL / ESCRITORIO
+      ======================================================== */}
+      <section id="app-pwa" className="py-20 bg-gradient-to-b from-[#081b3c] via-[#0c244d] to-[#071a3a] border-t border-blue-900/60 scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">
+              <span>📲</span> 100% PWA · Android, iPhone y Computador
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white mb-4">
+              Úsala ahora mismo en tu teléfono o PC
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              Sin descargas pesadas de tiendas ni esperas. Ábrela directamente desde tu navegador o instálala como acceso directo oficial en la pantalla de inicio de tu teléfono en 10 segundos.
+            </p>
+          </div>
+
+          {/* Tarjeta de Acceso Web + Código QR + Celular Interactivo */}
+          <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-[#0d2246] via-[#102d5c] to-[#0d2246] border-2 border-emerald-500/30 shadow-[0_0_40px_rgba(16,185,129,0.15)] flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold tracking-wider uppercase mb-3 border border-emerald-500/30">
+                PWA Oficial · app.redenlace.cl · Acceso Inmediato
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+                Conéctate con tu barrio en 1 toque
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                Descubre emprendedores locales, activa tu disponibilidad de servicios, chatea por WhatsApp y comparte publicaciones con fotos directamente desde la web o tu teléfono.
+              </p>
+
+              {/* Botón de apertura */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <a
+                  href="https://app.redenlace.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-extrabold text-sm sm:text-base bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-500 hover:from-emerald-300 hover:to-cyan-400 text-slate-950 shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <span className="text-lg">📲</span> Abrir Red Social en tu Celular / PC
+                </a>
+                <span className="text-xs text-emerald-300 font-medium text-center sm:text-left">
+                  ✨ 100% Gratis para toda la comunidad
+                </span>
+              </div>
+
+              {/* Aviso inteligente según dispositivo */}
+              <div className="mt-4 flex items-start gap-2.5 text-xs text-emerald-200/90 bg-[#071630]/80 border border-emerald-500/30 px-3.5 py-2.5 rounded-xl">
+                <span className="text-base shrink-0">💡</span>
+                <p className="leading-relaxed">
+                  <strong>¿Estás en tu celular?</strong> Toca el botón verde para entrar directo sin escanear. <strong>¿En PC?</strong> Puedes usarla en pantalla completa o escanear el QR con la cámara de tu teléfono.
+                </p>
+              </div>
+            </div>
+
+            {/* Celular interactivo: carga la app real al tocar */}
+            <div className="shrink-0 flex flex-col items-center">
+              <div className="relative w-[230px] h-[470px] rounded-[2.6rem] bg-slate-950 border-[6px] border-slate-700 shadow-[0_20px_60px_rgba(16,185,129,0.25)] overflow-hidden">
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 h-4 w-20 rounded-full bg-slate-900 z-20" />
+                {showAppPreview ? (
+                  <div className="relative w-full h-full bg-slate-900">
+                    <iframe
+                      src="https://app.redenlace.cl"
+                      title="Red Social ENLACE - App en vivo"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full bg-slate-950"
+                    />
+                    {/* Barra de control inferior: Pantalla completa y Salir */}
+                    <div className="absolute bottom-2.5 left-2 right-2 flex items-center justify-between gap-1 z-30 bg-slate-950/95 backdrop-blur-md px-2.5 py-1.5 rounded-xl border border-emerald-500/40 text-[10px]">
+                      <a
+                        href="https://app.redenlace.cl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-300 hover:text-emerald-200 font-bold flex items-center gap-1"
+                      >
+                        <span>↗</span> Pantalla completa
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setShowAppPreview(false)}
+                        className="text-slate-400 hover:text-white font-bold cursor-pointer px-1"
+                        title="Volver"
+                      >
+                        ✕ Salir
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setShowAppPreview(true)}
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-5 text-center bg-gradient-to-b from-[#0a2f45] via-[#0c3b5a] to-[#071a30] hover:from-[#0d3b55] transition-colors cursor-pointer group"
+                    aria-label="Probar la Red Social ENLACE aquí"
+                  >
+                    <span className="text-5xl group-hover:scale-110 transition-transform">🏘️</span>
+                    <span className="text-white font-extrabold text-base leading-tight">Red Social ENLACE</span>
+                    <span className="text-[11px] text-emerald-200">Emprendimientos · Perfiles · Chat · Directorio</span>
+                    <span className="mt-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-400 text-slate-950 text-xs font-black animate-pulse">
+                      ▶ Toca para probarla
+                    </span>
+                  </button>
+                )}
+              </div>
+              <span className="text-[11px] text-slate-400 mt-3 flex items-center gap-1">
+                <span>⚡</span> Demo interactiva · Android, iPhone y PC
+              </span>
+            </div>
+
+            {/* Código QR + Botón directo para móviles */}
+            <div className="shrink-0 flex flex-col items-center bg-[#071630] p-4 rounded-2xl border border-emerald-500/40 shadow-inner w-full sm:w-auto text-center">
+              <div className="text-[11px] font-bold text-slate-400 mb-2 uppercase tracking-wider flex items-center gap-1.5 justify-center">
+                <span>💻</span> Para usuarios en PC
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ecosistema/qr-enlace-app.png"
+                alt="QR Red Social ENLACE"
+                className="w-32 h-32 rounded-xl bg-white p-1.5 shadow-md"
+              />
+              <span className="text-[11px] font-bold text-emerald-400 mt-2 text-center">
+                Escanea con tu celular 📱
+              </span>
+              <span className="text-[10px] text-slate-400">
+                app.redenlace.cl
+              </span>
+
+              {/* Botón directo adicional para móviles */}
+              <a
+                href="https://app.redenlace.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 sm:hidden w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 text-xs font-bold"
+              >
+                <span>📲</span> Toca aquí para abrirla directo
+              </a>
+            </div>
+          </div>
+
+          {/* GUÍA INTERACTIVA: CÓMO INSTALAR EN TU CELULAR EN 10 SEGUNDOS */}
+          <div className="mt-8 rounded-3xl p-6 sm:p-8 bg-[#091f42]/90 border border-emerald-500/30 shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-blue-900/60">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold tracking-wider uppercase mb-2 border border-emerald-500/30">
+                  <span>📲</span> Acceso Directo Oficial · PWA Móvil
+                </div>
+                <h4 className="text-xl sm:text-2xl font-bold text-white">
+                  Cómo instalarla en tu teléfono en 10 segundos
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                  Se instala directo en tu pantalla de inicio: ícono oficial de ENLACE, abre a pantalla completa y sin consumir espacio de almacenamiento.
+                </p>
+              </div>
+
+              {/* Selector de Sistema Operativo */}
+              <div className="flex items-center gap-2 bg-[#071630] p-1.5 rounded-2xl border border-blue-900/80 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setInstallTab("android")}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+                    installTab === "android"
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-md"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  <span>🤖</span> Android (Chrome)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInstallTab("ios")}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+                    installTab === "ios"
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-950 shadow-md"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  <span>🍏</span> iPhone (Safari)
+                </button>
+              </div>
+            </div>
+
+            {/* Pasos según pestaña activa */}
+            {installTab === "android" ? (
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-black mb-3">
+                      PASO 1
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Abre en Chrome</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                      Escanea el QR o si ya estás en el celular, toca el botón de abajo para ir directo en <strong>Google Chrome</strong>:
+                    </p>
+                    <a
+                      href="https://app.redenlace.cl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-xs font-bold transition-all"
+                    >
+                      <span>🚀</span> Abrir app.redenlace.cl
+                    </a>
+                  </div>
+                  <span className="text-[11px] text-slate-500 mt-4 flex items-center gap-1">🌐 Navegador Google Chrome</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.15)] flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 text-xs font-black mb-3">
+                      PASO 2
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Toca "Instalar"</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      En la barra inferior te aparecerá <em>"Instalar y agregar a pantalla de inicio"</em>. Si no sale, toca los <strong>3 puntos (⋮)</strong> arriba a la derecha y presiona <strong>"Instalar aplicación"</strong>.
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-emerald-400 font-semibold mt-4 flex items-center gap-1">📲 Aviso emergente oficial</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-black mb-3">
+                      PASO 3
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">¡Listo en tu pantalla!</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Confirma en <strong>"Instalar"</strong>. Se creará el ícono oficial de ENLACE directo en tu pantalla de inicio como una app 100% nativa.
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-emerald-400 font-semibold mt-4 flex items-center gap-1">✨ Sin pasar por Play Store</span>
+                </div>
+              </div>
+            ) : (
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/20 text-cyan-400 text-xs font-black mb-3">
+                      PASO 1
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Abre en Safari</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                      Escanea el QR o si estás en el iPhone, toca el botón de abajo para abrir en <strong>Safari</strong> (imprescindible en iOS):
+                    </p>
+                    <a
+                      href="https://app.redenlace.cl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/50 text-cyan-300 text-xs font-bold transition-all"
+                    >
+                      <span>🍏</span> Abrir en Safari
+                    </a>
+                  </div>
+                  <span className="text-[11px] text-slate-500 mt-4 flex items-center gap-1">🍏 Navegador Apple Safari</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.15)] flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-cyan-500 text-slate-950 text-xs font-black mb-3">
+                      PASO 2
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">Toca "Compartir"</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      En la barra inferior de Safari en tu iPhone, presiona el botón central de <strong>Compartir</strong> (el cuadrado con la flecha apuntando hacia arriba ⬆️).
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-cyan-400 font-semibold mt-4 flex items-center gap-1">📤 Menú Compartir</span>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-[#071630]/90 border border-blue-800/60 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/20 text-cyan-400 text-xs font-black mb-3">
+                      PASO 3
+                    </span>
+                    <h5 className="font-bold text-sm text-white mb-1.5">"Agregar a inicio"</h5>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Desliza hacia abajo en las opciones y selecciona <strong>"Agregar a pantalla de inicio"</strong>. Toca <em>Agregar</em> y ¡listo!
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-cyan-400 font-semibold mt-4 flex items-center gap-1">✨ Sin pasar por App Store</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
