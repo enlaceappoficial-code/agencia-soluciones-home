@@ -74,7 +74,7 @@ const productosData = [
   // FILA 1: Existentes
   {
     title: 'Constructor Pro',
-    description: 'Presupuestos, partidas, APU y herramientas de gestión para profesionales de la construcción.',
+    description: 'Presupuestos, partidas, APU y gestión para obras. Incluye App Móvil de Terreno para medir con celular.',
     link: 'https://redenlace.cl/constructor-pro',
     linkText: 'Conocer Constructor Pro',
     status: 'Disponible' as Status,

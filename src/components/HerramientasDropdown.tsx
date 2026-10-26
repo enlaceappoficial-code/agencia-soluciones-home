@@ -40,6 +40,17 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     accent: 'orange',
   },
   {
+    id: 'ecp-medidas',
+    name: 'ECP Medidas de Terreno',
+    short: 'Medidas de Terreno',
+    description: 'App móvil oficial: áreas irregulares (Herón), cubicaciones y visitas',
+    logo: '/ecosistema/constructor-pro-logo.png',
+    status: 'live',
+    href: 'https://medidas.redenlace.cl',
+    external: true,
+    accent: 'blue',
+  },
+  {
     id: 'barberia-pro',
     name: 'Enlace Barbería Pro',
     short: 'Barbería Pro',
