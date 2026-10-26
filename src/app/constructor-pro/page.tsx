@@ -754,18 +754,26 @@ export default function ConstructorProPage() {
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
                 No necesitas descargar archivos pesados de tiendas ni registrarte para empezar. Escanea el QR o abre el enlace para probar el modo gratuito (hasta 2 visitas con partidas, fotos y calculadora de paños irregulares). La sincronización directa a PC y proyectos ilimitados se desbloquean con tu licencia de Plan Pro o Plus.
               </p>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href="https://medidas.redenlace.cl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-extrabold text-sm sm:text-base bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 shadow-xl shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <span>📲</span> Abrir App Móvil de Terreno
+                  <span className="text-lg">📲</span> Abrir App en tu Celular Ahora
                 </a>
-                <span className="text-xs text-emerald-400 font-medium">
+                <span className="text-xs text-emerald-400 font-medium text-center sm:text-left">
                   🎁 Versión Pro Ilimitada incluida desde el Plan Pro
                 </span>
+              </div>
+
+              {/* Aviso inteligente según dispositivo */}
+              <div className="mt-3 flex items-start gap-2 text-xs text-cyan-200/90 bg-[#071630]/80 border border-cyan-500/30 px-3.5 py-2.5 rounded-xl">
+                <span className="text-base shrink-0">💡</span>
+                <p className="leading-relaxed">
+                  <strong>¿Estás en tu celular?</strong> Toca el botón celeste para entrar directo sin escanear. <strong>¿En PC?</strong> Escanea el código QR de la derecha con la cámara de tu teléfono.
+                </p>
               </div>
             </div>
 
@@ -822,7 +830,11 @@ export default function ConstructorProPage() {
               </span>
             </div>
 
-            <div className="shrink-0 flex flex-col items-center bg-[#071630] p-4 rounded-2xl border border-cyan-500/40 shadow-inner">
+            {/* Código QR + Botón directo para móviles */}
+            <div className="shrink-0 flex flex-col items-center bg-[#071630] p-4 rounded-2xl border border-cyan-500/40 shadow-inner w-full sm:w-auto text-center">
+              <div className="text-[11px] font-bold text-slate-400 mb-2 uppercase tracking-wider flex items-center gap-1.5 justify-center">
+                <span>💻</span> Para usuarios en PC
+              </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/ecosistema/qr-ecp-medidas.png"
@@ -835,6 +847,16 @@ export default function ConstructorProPage() {
               <span className="text-[10px] text-slate-400">
                 medidas.redenlace.cl
               </span>
+
+              {/* Botón directo adicional para móviles */}
+              <a
+                href="https://medidas.redenlace.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 sm:hidden w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 text-cyan-300 text-xs font-bold"
+              >
+                <span>📲</span> Toca aquí para abrirla directo
+              </a>
             </div>
           </div>
 
@@ -889,9 +911,17 @@ export default function ConstructorProPage() {
                       PASO 1
                     </span>
                     <h5 className="font-bold text-sm text-white mb-1.5">Abre en Chrome</h5>
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      Escanea el código QR con tu cámara o abre <strong className="text-cyan-300">medidas.redenlace.cl</strong> en Google Chrome desde tu celular.
+                    <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                      Escanea el QR o si ya estás en el celular, toca el botón de abajo para ir directo en <strong>Google Chrome</strong>:
                     </p>
+                    <a
+                      href="https://medidas.redenlace.cl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-xs font-bold transition-all"
+                    >
+                      <span>🚀</span> Abrir medidas.redenlace.cl
+                    </a>
                   </div>
                   <span className="text-[11px] text-slate-500 mt-4 flex items-center gap-1">🌐 Navegador Google Chrome</span>
                 </div>
@@ -930,9 +960,17 @@ export default function ConstructorProPage() {
                       PASO 1
                     </span>
                     <h5 className="font-bold text-sm text-white mb-1.5">Abre en Safari</h5>
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      Escanea el QR con la cámara de tu iPhone o abre <strong className="text-cyan-300">medidas.redenlace.cl</strong> en <strong>Safari</strong> (imprescindible en iOS).
+                    <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                      Escanea el QR o si estás en el iPhone, toca el botón de abajo para abrir en <strong>Safari</strong> (imprescindible en iOS):
                     </p>
+                    <a
+                      href="https://medidas.redenlace.cl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/50 text-cyan-300 text-xs font-bold transition-all"
+                    >
+                      <span>🍏</span> Abrir en Safari
+                    </a>
                   </div>
                   <span className="text-[11px] text-slate-500 mt-4 flex items-center gap-1">🍏 Navegador Apple Safari</span>
                 </div>
