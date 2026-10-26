@@ -752,19 +752,19 @@ export default function ConstructorProPage() {
                 Pruébala gratis ahora mismo en tu celular
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                No necesitas descargar archivos de tiendas ni registrarte. Abre el enlace directo o apunta con la cámara de tu teléfono al código QR para usar la calculadora de terreno en tu próxima visita técnica.
+                No necesitas descargar archivos pesados de tiendas ni registrarte para empezar. Escanea el QR o abre el enlace para probar el modo gratuito (hasta 2 visitas con partidas, fotos y calculadora de paños irregulares). La sincronización directa a PC y proyectos ilimitados se desbloquean con tu licencia de Plan Pro o Plus.
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="https://medidas.redenlace.cl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>📲</span> Abrir App Móvil de Terreno
                 </a>
                 <span className="text-xs text-emerald-400 font-medium">
-                  🎁 Incluida gratis desde el plan Pro
+                  🎁 Versión Pro Ilimitada incluida desde el Plan Pro
                 </span>
               </div>
             </div>
