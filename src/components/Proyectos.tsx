@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 // Interfaz para definir la estructura de un Proyecto
@@ -43,6 +43,15 @@ const proyectosData: ProyectoData[] = [
     imagePlaceholderText: 'Captura Estampa Pau',
     image: '/proyectos/estampa-pau.png'
   },
+  {
+    title: 'Mentrix Estudios',
+    type: 'PORTAL GAMING & APLICACIONES PWA',
+    description: 'Estudio oficial de videojuegos inteligentes, catálogo interactivo de lanzamientos y apps web PWA instalables.',
+    chips: ['Responsive', 'Next.js', 'PWA Web', 'Videojuegos'],
+    link: 'https://web-mentrix-estudios.vercel.app/', 
+    imagePlaceholderText: 'Captura Mentrix Estudios',
+    image: '/proyectos/mentrix-estudios.png'
+  },
 
   // --- FILA 2: PROYECTOS MODELO / REFERENCIAS ---
   {
@@ -79,8 +88,8 @@ const proyectosData: ProyectoData[] = [
 
 export default function Proyectos() {
   // Separar los proyectos reales de los modelos para poder inyectar un separador en medio
-  const proyectosReales = proyectosData.slice(0, 3);
-  const proyectosModelos = proyectosData.slice(3, 6);
+  const proyectosReales = proyectosData.filter((item) => !item.isReference);
+  const proyectosModelos = proyectosData.filter((item) => item.isReference);
 
   // Función para renderizar una tarjeta individual
   const renderCard = (item: ProyectoData, index: number) => (
@@ -159,15 +168,29 @@ export default function Proyectos() {
 
         {/* Botón dinámico según el estado del link */}
         {item.link ? (
-          <Link 
-            href={item.link} 
-            className={`mt-auto inline-flex items-center justify-center w-full py-3.5 px-4 bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 rounded-xl text-white hover:text-blue-300 text-[14px] font-bold transition-all gap-2 group/btn ${item.isReference ? 'hover:bg-purple-500/10 hover:border-purple-500/30 hover:text-purple-300' : ''}`}
-          >
-            {item.isReference ? 'Ver referencia' : 'Ver proyecto'}
-            <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+          item.link.startsWith('http') ? (
+            <a 
+              href={item.link} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-auto inline-flex items-center justify-center w-full py-3.5 px-4 bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 rounded-xl text-white hover:text-blue-300 text-[14px] font-bold transition-all gap-2 group/btn ${item.isReference ? 'hover:bg-purple-500/10 hover:border-purple-500/30 hover:text-purple-300' : ''}`}
+            >
+              {item.isReference ? 'Ver referencia' : 'Ver proyecto'}
+              <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          ) : (
+            <Link 
+              href={item.link} 
+              className={`mt-auto inline-flex items-center justify-center w-full py-3.5 px-4 bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 rounded-xl text-white hover:text-blue-300 text-[14px] font-bold transition-all gap-2 group/btn ${item.isReference ? 'hover:bg-purple-500/10 hover:border-purple-500/30 hover:text-purple-300' : ''}`}
+            >
+              {item.isReference ? 'Ver referencia' : 'Ver proyecto'}
+              <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          )
         ) : (
           <div className="mt-auto inline-flex items-center justify-center w-full py-3.5 px-4 bg-white/5 border border-white/5 rounded-xl text-slate-500 text-[14px] font-bold cursor-not-allowed">
             Próximamente
@@ -199,7 +222,7 @@ export default function Proyectos() {
         </div>
 
         {/* Primera Fila: GRID DE PROYECTOS REALES */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           {proyectosReales.map((item, index) => renderCard(item, index))}
         </div>
 
@@ -216,7 +239,7 @@ export default function Proyectos() {
 
         {/* Segunda Fila: GRID DE PROYECTOS MODELO */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {proyectosModelos.map((item, index) => renderCard(item, index + 3))}
+          {proyectosModelos.map((item, index) => renderCard(item, index + proyectosReales.length))}
         </div>
 
       </div>

@@ -51,6 +51,17 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     accent: 'blue',
   },
   {
+    id: 'mentrix-estudios',
+    name: 'Mentrix Estudios (Videojuegos & PWA)',
+    short: 'Mentrix Gaming',
+    description: 'Estudio de videojuegos inteligentes, trivias de deducción y web apps PWA',
+    logo: '/ecosistema/logo-mentrix.png',
+    status: 'live',
+    href: 'https://web-mentrix-estudios.vercel.app',
+    external: true,
+    accent: 'blue',
+  },
+  {
     id: 'restoran',
     name: 'Enlace Restorán',
     short: 'Restorán',
