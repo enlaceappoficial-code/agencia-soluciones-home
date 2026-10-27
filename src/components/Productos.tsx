@@ -97,10 +97,10 @@ const productosData = [
     )
   },
   {
-    title: 'Enlace Barbería',
-    description: 'Agenda, reservas y gestión digital para barberías, peluquerías y profesionales del rubro.',
+    title: 'Enlace Barbería & Peluquería Pro',
+    description: 'Agenda, reservas y gestión digital para barberías, peluquerías y salones de belleza.',
     link: '/peluqueria',
-    linkText: 'Conocer Enlace Barbería',
+    linkText: 'Conocer Barbería & Peluquería',
     status: 'Disponible' as Status,
     theme: 'emerald' as ThemeColor,
     icon: (
@@ -121,10 +121,10 @@ const productosData = [
     )
   },
   {
-    title: 'Enlace Red Social',
+    title: 'Red Social ENLACE',
     description: 'Una comunidad digital para conectar personas, emprendedores, servicios y oportunidades cercanas.',
-    link: 'https://redenlace.cl',
-    linkText: 'Visitar Red Social',
+    link: '/red-social',
+    linkText: 'Conocer Red Social',
     status: 'Disponible' as Status,
     theme: 'blue' as ThemeColor,
     icon: (
