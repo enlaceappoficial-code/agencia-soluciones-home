@@ -26,7 +26,7 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
     status: 'live',
     href: '/red-social',
     external: false,
-    accent: 'green',
+    accent: 'blue',
   },
   {
     id: 'constructor-pro',
@@ -124,8 +124,8 @@ const ECOSYSTEM_TOOLS: ToolItem[] = [
 ];
 
 const STATUS_BADGES = {
-  live: 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.2)]',
-  soon: 'bg-blue-500/15 text-blue-400 border border-blue-500/30',
+  live: 'bg-blue-500/15 text-blue-400 border border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]',
+  soon: 'bg-amber-500/15 text-amber-400 border border-amber-500/30',
   dev: 'bg-slate-700/40 text-slate-400 border border-slate-600/40',
 };
 
@@ -266,19 +266,19 @@ export default function HerramientasDropdown() {
                         <div className="w-2.5 h-0.5 rounded-full bg-cyan-400/60" />
                       </div>
                     ) : item.id === 'enlace-app' ? (
-                      /* ENLACE App: Logo dentro de un Smartphone Esmeralda/Cyan */
-                      <div className="w-5 h-8 rounded-[6px] bg-[#071630] border-[1.5px] border-emerald-400/90 shadow-[0_0_10px_rgba(16,185,129,0.35)] flex flex-col items-center justify-between py-0.5" title="App PWA para Celular y Web">
+                      /* ENLACE App: Logo dentro de un Smartphone Azul */
+                      <div className="w-5 h-8 rounded-[6px] bg-[#071630] border-[1.5px] border-blue-400/90 shadow-[0_0_10px_rgba(59,130,246,0.35)] flex flex-col items-center justify-between py-0.5" title="App PWA para Celular y Web">
                         {/* Notch superior */}
-                        <div className="w-2 h-0.5 rounded-full bg-emerald-400/80" />
+                        <div className="w-2 h-0.5 rounded-full bg-blue-400/80" />
                         {/* Logo ENLACE en pantalla */}
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={item.logo}
                           alt="ENLACE App"
-                          className="h-3.5 w-3.5 object-contain filter drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]"
+                          className="h-3.5 w-3.5 object-contain filter drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]"
                         />
                         {/* Barra inferior */}
-                        <div className="w-2.5 h-0.5 rounded-full bg-emerald-400/60" />
+                        <div className="w-2.5 h-0.5 rounded-full bg-blue-400/60" />
                       </div>
                     ) : item.logo ? (
                       // eslint-disable-next-line @next/next/no-img-element

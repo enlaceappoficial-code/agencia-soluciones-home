@@ -150,23 +150,28 @@ export default function Navbar() {
               href="https://app.redenlace.cl"
               target="_blank"
               rel="noopener noreferrer"
-              className="enlace-nav-btn hidden md:inline-flex items-center gap-2"
+              className="enlace-nav-btn hidden md:inline-flex items-center justify-center gap-2"
               style={{
                 borderRadius: "12px",
-                background: "linear-gradient(135deg, hsl(160, 84%, 39%) 0%, hsl(187, 92%, 40%) 100%)",
+                background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
                 padding: "10px 20px",
+                height: "40px",
                 fontSize: "14px",
                 lineHeight: "20px",
-                fontWeight: 700,
+                fontWeight: 600,
                 fontFamily: "'DM Sans', system-ui, sans-serif",
-                color: "#030B18",
+                color: "#ffffff",
                 textDecoration: "none",
-                boxShadow: "0 0 16px rgba(16,185,129,0.35)",
+                whiteSpace: "nowrap",
+                boxSizing: "border-box",
+                boxShadow: "0 0 16px rgba(59,130,246,0.35)",
                 transition: "all .3s cubic-bezier(.4,0,.2,1)",
               }}
             >
-              <span>🚀</span>
-              <span>Iniciar Sesión / Abrir App</span>
+              <svg className="w-4 h-4 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              </svg>
+              <span>Iniciar Sesión</span>
             </a>
           ) : (
             <Link
@@ -245,17 +250,20 @@ export default function Navbar() {
                 textAlign: "center",
                 marginTop: "8px",
                 borderRadius: "12px",
-                background: "linear-gradient(135deg, hsl(160, 84%, 39%) 0%, hsl(187, 92%, 40%) 100%)",
+                background: "linear-gradient(135deg, hsl(222, 93%, 45%) 0%, hsl(209, 96%, 56%) 100%)",
                 padding: "10px 20px",
                 fontSize: "14px",
-                fontWeight: 700,
-                color: "#030B18",
+                fontWeight: 600,
+                color: "#ffffff",
                 textDecoration: "none",
+                boxShadow: "0 0 16px rgba(59,130,246,0.3)",
               }}
               onClick={() => setIsOpen(false)}
             >
-              <span>🚀</span>
-              <span>Iniciar Sesión / Abrir App</span>
+              <svg className="w-4 h-4 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              </svg>
+              <span>Iniciar Sesión</span>
             </a>
           ) : (
             <Link
