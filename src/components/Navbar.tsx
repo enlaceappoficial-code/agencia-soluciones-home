@@ -28,7 +28,9 @@ export default function Navbar() {
     pathname === "/constructor-pro" ||
     pathname?.startsWith("/constructor-pro/") ||
     pathname === "/peluqueria" ||
-    pathname?.startsWith("/peluqueria/");
+    pathname?.startsWith("/peluqueria/") ||
+    pathname === "/agenda-pro" ||
+    pathname?.startsWith("/agenda-pro/");
 
   if (isProductPage) {
     return null;

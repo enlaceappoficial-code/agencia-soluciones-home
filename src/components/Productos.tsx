@@ -63,7 +63,7 @@ const themeMaps: Record<ThemeColor, { bg: string, border: string, hoverBorder: s
 };
 
 const statusClasses: Record<Status, string> = {
-  'Disponible': "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+  'Disponible': "text-blue-400 bg-blue-500/10 border-blue-500/20",
   'Próximamente': "text-slate-400 bg-slate-500/10 border-slate-500/20",
   'En desarrollo': "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
   'A medida': "text-purple-400 bg-purple-500/10 border-purple-500/20"
@@ -102,7 +102,7 @@ const productosData = [
     link: '/peluqueria',
     linkText: 'Conocer Barbería & Peluquería',
     status: 'Disponible' as Status,
-    theme: 'emerald' as ThemeColor,
+    theme: 'blue' as ThemeColor,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -191,11 +191,11 @@ const productosData = [
   },
   {
     title: 'Enlace Agenda Pro',
-    description: 'Agenda compartida, reservas online y confirmaciones automáticas.',
-    link: 'https://redenlace.cl/agenda-pro',
+    description: 'Agenda inteligente, reservas online 24/7, recordatorios por WhatsApp y señas anti-inasistencia para profesionales.',
+    link: '/agenda-pro',
     linkText: 'Conocer Agenda Pro',
-    status: 'Próximamente' as Status,
-    theme: 'indigo' as ThemeColor,
+    status: 'Disponible' as Status,
+    theme: 'blue' as ThemeColor,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

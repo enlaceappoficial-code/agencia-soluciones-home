@@ -733,19 +733,21 @@ export default function RedSocialPage() {
             </div>
 
             {/* App 5: Agenda Pro */}
-            <div className="p-6 rounded-2xl bg-[#0d2550]/60 border border-blue-900/40 relative opacity-80">
+            <Link
+              href="/agenda-pro"
+              className="p-6 rounded-2xl bg-[#0d2550] border border-blue-900/60 relative group hover:border-blue-400 hover:-translate-y-1 transition-all block no-underline text-inherit"
+            >
               <span className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/30 mb-4">
-                Próximamente
+                ✓ Disponible
               </span>
               <div className="text-3xl mb-3">📅</div>
-              <h3 className="text-lg font-bold font-display text-white mb-2">
+              <h3 className="text-lg font-bold font-display text-white mb-2 group-hover:text-blue-300 transition-colors">
                 ENLACE Agenda Pro
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Sistema inteligente de citas, recordatorios automáticos y pagos
-                para profesionales independientes.
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Sistema inteligente de citas, recordatorios automáticos por WhatsApp y señas anti-inasistencia para profesionales y empresas.
               </p>
-            </div>
+            </Link>
 
             {/* App 6: Gestión */}
             <div className="p-6 rounded-2xl bg-[#0d2550]/60 border border-blue-900/40 relative opacity-80">
