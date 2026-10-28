@@ -60,22 +60,22 @@ const PRO_FEATURES = [
 
 const PRICING_DATA = {
   starter: {
-    semestral: "$29.990",
-    anual: "$49.990",
-    mesSemestral: "$5.000",
-    mesAnual: "$4.166",
+    semestral: "$0",
+    anual: "$0",
+    mesSemestral: "$0",
+    mesAnual: "$0",
   },
   pro: {
-    semestral: "$45.990",
-    anual: "$79.990",
-    mesSemestral: "$7.665",
-    mesAnual: "$6.665",
+    semestral: "$14.990",
+    anual: "$24.990",
+    mesSemestral: "$2.499",
+    mesAnual: "$2.083",
   },
   premium: {
-    semestral: "$85.990",
-    anual: "$149.990",
-    mesSemestral: "$14.330",
-    mesAnual: "$12.499",
+    semestral: "$29.990",
+    anual: "$49.990",
+    mesSemestral: "$4.999",
+    mesAnual: "$4.166",
   },
 };
 
@@ -365,37 +365,37 @@ export default function AgendaProPage() {
 
           {/* Grid de los 3 Planes */}
           <div className="grid md:grid-cols-3 gap-6 items-stretch mt-12">
-            {/* PLAN STARTER */}
+            {/* PLAN GRATIS */}
             <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
-                <h3 className="font-display font-bold text-xl text-white mb-2">Starter</h3>
+                <h3 className="font-display font-bold text-xl text-white mb-2">Gratis</h3>
                 <div className="font-display font-extrabold text-4xl text-white mb-1">
-                  {isAnual ? PRICING_DATA.starter.anual : PRICING_DATA.starter.semestral}
+                  $0
                   <span className="text-sm font-medium text-slate-400 ml-1">
-                    {isAnual ? "/año" : "/semestre"}
+                    /para siempre
                   </span>
                 </div>
                 <div className="text-xs text-slate-400 mb-3">
-                  Equivale a {isAnual ? PRICING_DATA.starter.mesAnual : PRICING_DATA.starter.mesSemestral}/mes
+                  Sin costo mensual ni tarjeta de crédito
                 </div>
 
                 <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  Ideal para profesionales individuales que quieren automatizar su agenda 24/7.
+                  Comienza a digitalizarte hoy mismo. Ideal para captar clientes y recibir citas online de inmediato.
                 </p>
 
                 {/* Banner de 1 mes gratis pioneros */}
                 <div className="p-3 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] font-bold text-blue-300 mb-6 leading-relaxed">
-                  🎁 Prueba el sistema completo GRATIS por 1 mes (30 días) creando tu cuenta ahora.
+                  🎁 100% Gratis para siempre. Empieza en 5 minutos sin fricción.
                 </div>
 
                 <ul className="space-y-3 mb-8 text-sm">
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">1 Profesional / Agenda única</span>
+                    <span className="text-slate-200">1 Profesional / Agenda personal</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Reservas online 24/7 ilimitadas</span>
+                    <span className="text-slate-200">Hasta 50 reservas online al mes</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
@@ -418,14 +418,12 @@ export default function AgendaProPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20Starter%20(${
-                    isAnual ? "Anual" : "Semestral"
-                  })%20de%20Agenda%20Pro.`}
+                  href="https://agenda.redenlace.cl"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-4 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-4 font-semibold text-slate-100 hover:border-blue-400/50 hover:bg-slate-900/90 transition-all text-sm text-center"
                 >
-                  Solicitar Plan por WhatsApp
+                  Comenzar Gratis (Sin Tarjeta)
                 </a>
               </div>
             </div>

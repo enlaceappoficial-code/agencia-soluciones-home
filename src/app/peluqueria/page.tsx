@@ -46,22 +46,22 @@ const PRO_FEATURES = [
 
 const PRICING_DATA = {
   basico: {
-    semestral: "$29.990",
-    anual: "$49.990",
-    mesSemestral: "$5.000",
-    mesAnual: "$4.166",
+    semestral: "$0",
+    anual: "$0",
+    mesSemestral: "$0",
+    mesAnual: "$0",
   },
   plus: {
-    semestral: "$45.990",
-    anual: "$79.990",
-    mesSemestral: "$7.665",
-    mesAnual: "$6.665",
+    semestral: "$14.990",
+    anual: "$24.990",
+    mesSemestral: "$2.499",
+    mesAnual: "$2.083",
   },
   pro: {
-    semestral: "$85.990",
-    anual: "$149.990",
-    mesSemestral: "$14.331",
-    mesAnual: "$12.499",
+    semestral: "$29.990",
+    anual: "$49.990",
+    mesSemestral: "$4.999",
+    mesAnual: "$4.166",
   },
 };
 
@@ -336,27 +336,27 @@ export default function PeluqueriaPage() {
 
           {/* Grid de los 3 Planes Originales */}
           <div className="grid md:grid-cols-3 gap-6 items-stretch mt-12">
-            {/* PLAN BÁSICO */}
+            {/* PLAN GRATIS */}
             <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
-                <h3 className="font-display font-bold text-xl text-white mb-2">Básico</h3>
+                <h3 className="font-display font-bold text-xl text-white mb-2">Gratis</h3>
                 <div className="font-display font-extrabold text-4xl text-white mb-1">
-                  {isAnual ? PRICING_DATA.basico.anual : PRICING_DATA.basico.semestral}
+                  $0
                   <span className="text-sm font-medium text-slate-400 ml-1">
-                    {isAnual ? "/año" : "/semestre"}
+                    /para siempre
                   </span>
                 </div>
                 <div className="text-xs text-slate-400 mb-3">
-                  Equivale a {isAnual ? PRICING_DATA.basico.mesAnual : PRICING_DATA.basico.mesSemestral}/mes
+                  Sin costo mensual ni tarjeta de crédito
                 </div>
 
                 <p className="text-sm text-slate-300 leading-relaxed mb-4">
                   Perfecto para barberos independientes que recién comienzan a digitalizarse.
                 </p>
 
-                {/* Banner de 1 mes gratis original */}
+                {/* Banner de bienvenida gratis */}
                 <div className="p-3 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] font-bold text-blue-300 mb-6 leading-relaxed">
-                  🎁 Prueba el sistema completo GRATIS por 1 mes (30 días) creando tu cuenta ahora.
+                  🎁 Plan Gratuito para siempre. Empieza hoy sin tarjeta de crédito.
                 </div>
 
                 <ul className="space-y-3 mb-8 text-sm">
@@ -366,7 +366,11 @@ export default function PeluqueriaPage() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Reservas online 24/7 ilimitadas</span>
+                    <span className="text-slate-200 font-semibold">Hasta 50 reservas online al mes</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="text-slate-200">Link de reservas estándar</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
@@ -376,23 +380,17 @@ export default function PeluqueriaPage() {
                     <span className="text-blue-400 font-bold">✓</span>
                     <span className="text-slate-200">Ingresos y cierre de caja</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Link de reservas estándar</span>
-                  </li>
                 </ul>
               </div>
 
               <div>
                 <a
-                  href={`https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20B%C3%A1sico%20(${
-                    isAnual ? "Anual" : "Semestral"
-                  })%20de%20Barberia%20Pro.`}
+                  href="https://barberia.redenlace.cl"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-4 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-500/50 bg-blue-600/10 hover:bg-blue-600/20 py-3.5 px-4 font-bold text-white transition-all text-sm text-center shadow-sm"
                 >
-                  Solicitar Plan por WhatsApp
+                  Comenzar Gratis (Sin Tarjeta)
                 </a>
               </div>
             </div>
@@ -422,6 +420,10 @@ export default function PeluqueriaPage() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
+                    <span className="text-slate-200 font-semibold">Reservas online 24/7 ILIMITADAS</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-blue-400 font-bold">✓</span>
                     <span className="text-slate-200">Recordatorios por WhatsApp (1 clic)</span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -434,7 +436,7 @@ export default function PeluqueriaPage() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200 font-medium">Todo lo del plan Básico</span>
+                    <span className="text-slate-200 font-medium">Todo lo del plan Gratis</span>
                   </li>
                 </ul>
               </div>

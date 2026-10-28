@@ -93,31 +93,30 @@ export const agendaProConfig: ProductConfig = {
   plans: {
     title: "Elige el plan ideal para tu negocio",
     subtitle:
-      "Sin comisiones por cita. Pagas una tarifa fija y el 100% de los ingresos de tus servicios va directo a tu cuenta.",
+      "Empieza 100% gratis para probar y captar clientes. Sin comisiones por cita y con tarifas planas que no asustan.",
     hasToggle: true,
     items: [
       {
         id: "starter",
-        name: "Starter",
-        price: "$29.990",
-        period: "/semestre",
-        monthlyEquivalent: "$5.000 / mes",
+        name: "Gratis",
+        price: "$0",
+        period: "/gratis",
+        monthlyEquivalent: "$0 / mes para siempre",
         description:
-          "Ideal para profesionales independientes que quieren automatizar su agendamiento.",
+          "Comienza a digitalizarte hoy sin costo ni tarjeta de crédito.",
         highlightNote:
-          "🎁 Si eres parte de los pioneros de Enlace, obtén tu plan básico GRATIS por 1 mes (30 días).",
+          "🎁 Plan Gratuito para captar y recibir citas online de inmediato.",
         features: [
-          "1 Profesional / Agenda individual",
-          "Reservas online 24/7 ilimitadas",
+          "1 Profesional / Agenda personal",
+          "Hasta 50 reservas online al mes",
           "Link público de cliente personalizado",
           "Ficha y base de datos de clientes",
           "Control de caja diaria y gastos básicos",
-          "Acceso móvil PWA y escritorio",
+          "Acceso móvil PWA y computador",
         ],
         cta: {
-          label: "Solicitar Plan por WhatsApp",
-          href:
-            "https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20Starter%20de%20Agenda%20Pro",
+          label: "Comenzar Gratis (Sin Tarjeta)",
+          href: "https://agenda.redenlace.cl",
           external: true,
           variant: "outline",
         },
@@ -125,25 +124,26 @@ export const agendaProConfig: ProductConfig = {
       {
         id: "pro",
         name: "Pro",
-        price: "$45.990",
+        price: "$14.990",
         period: "/semestre",
-        monthlyEquivalent: "$7.665 / mes",
-        description: "El más elegido para centros, consultas y equipos en crecimiento.",
+        monthlyEquivalent: "$2.499 / mes",
+        description: "El más elegido para profesionales activos y consultas en crecimiento.",
         isPopular: true,
         badge: "MÁS POPULAR",
         features: [
           "Hasta 3 Profesionales / Multi-agenda",
+          "Reservas online 24/7 ILIMITADAS",
           "Recordatorios por WhatsApp automáticos",
           "CRM inteligente de retención de clientes",
           "Historial técnico y notas por cliente",
           "Personalización con Logo propio",
           "Estadísticas de ganancias netas y reportes",
-          "Todo lo incluido en el Plan Starter",
+          "Todo lo incluido en el Plan Gratis",
         ],
         cta: {
-          label: "Solicitar Plan por WhatsApp",
+          label: "Solicitar Plan Pro",
           href:
-            "https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20Pro%20de%20Agenda%20Pro",
+            "https://wa.me/56941278725?text=Hola!%20Me%20interesa%20activar%20el%20Plan%20Pro%20de%20Agenda%20Pro",
           external: true,
           variant: "primary",
         },
@@ -151,11 +151,11 @@ export const agendaProConfig: ProductConfig = {
       {
         id: "premium",
         name: "Premium",
-        price: "$85.990",
+        price: "$29.990",
         period: "/semestre",
-        monthlyEquivalent: "$14.330 / mes",
+        monthlyEquivalent: "$4.999 / mes",
         description:
-          "Potencia ilimitada para empresas, clínicas y centros con alto flujo de atención.",
+          "Potencia total y señas obligatorias para centros con equipo y alto flujo.",
         features: [
           "Profesionales Ilimitados (Sin restricciones)",
           "Depósito y Seña obligatoria Anti No-Show",
@@ -166,9 +166,9 @@ export const agendaProConfig: ProductConfig = {
           "Todo lo incluido en el Plan Pro",
         ],
         cta: {
-          label: "Solicitar Plan por WhatsApp",
+          label: "Solicitar Plan Premium",
           href:
-            "https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20Premium%20de%20Agenda%20Pro",
+            "https://wa.me/56941278725?text=Hola!%20Me%20interesa%20activar%20el%20Plan%20Premium%20de%20Agenda%20Pro",
           external: true,
           variant: "outline",
         },
