@@ -65,17 +65,23 @@ const PRICING_DATA = {
     mesSemestral: "$0",
     mesAnual: "$0",
   },
-  pro: {
+  inicial: {
     semestral: "$14.990",
     anual: "$24.990",
     mesSemestral: "$2.499",
     mesAnual: "$2.083",
   },
-  premium: {
+  pro: {
     semestral: "$29.990",
     anual: "$49.990",
     mesSemestral: "$4.999",
     mesAnual: "$4.166",
+  },
+  premium: {
+    semestral: "$49.990",
+    anual: "$89.990",
+    mesSemestral: "$8.331",
+    mesAnual: "$7.499",
   },
 };
 
@@ -363,55 +369,55 @@ export default function AgendaProPage() {
             </div>
           </div>
 
-          {/* Grid de los 3 Planes */}
-          <div className="grid md:grid-cols-3 gap-6 items-stretch mt-12">
+          {/* Grid de los 4 Planes */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mt-12">
             {/* PLAN GRATIS */}
-            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
+            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-2">Gratis</h3>
-                <div className="font-display font-extrabold text-4xl text-white mb-1">
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1">
                   $0
-                  <span className="text-sm font-medium text-slate-400 ml-1">
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
                     /para siempre
                   </span>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">
-                  Sin costo mensual ni tarjeta de crédito
+                <div className="text-[11px] text-slate-400 mb-3">
+                  Sin costo mensual ni tarjeta
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  Comienza a digitalizarte hoy mismo. Ideal para captar clientes y recibir citas online de inmediato.
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Comienza a digitalizarte hoy mismo. Ideal para captar clientes y recibir citas online.
                 </p>
 
-                {/* Banner de 1 mes gratis pioneros */}
-                <div className="p-3 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] font-bold text-blue-300 mb-6 leading-relaxed">
-                  🎁 100% Gratis para siempre. Empieza en 5 minutos sin fricción.
+                {/* Banner gratis */}
+                <div className="p-2.5 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] font-bold text-blue-300 mb-5 leading-relaxed">
+                  🎁 100% Gratis para siempre.
                 </div>
 
-                <ul className="space-y-3 mb-8 text-sm">
-                  <li className="flex items-start gap-2.5">
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">1 Profesional / Agenda personal</span>
+                    <span>1 Profesional / Agenda personal</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Hasta 50 reservas online al mes</span>
+                    <span>Hasta 30 reservas online al mes</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Link público de cliente personalizado</span>
+                    <span>Link público personalizado</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Ficha y base de datos de clientes</span>
+                    <span>Ficha y base de datos de clientes</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Caja diaria y gastos básicos</span>
+                    <span>Caja diaria y gastos básicos</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Acceso móvil PWA y computador</span>
+                    <span>Acceso móvil PWA y PC</span>
                   </li>
                 </ul>
               </div>
@@ -421,65 +427,137 @@ export default function AgendaProPage() {
                   href="https://agenda.redenlace.cl"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-4 font-semibold text-slate-100 hover:border-blue-400/50 hover:bg-slate-900/90 transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-3 font-semibold text-slate-100 hover:border-blue-400/50 hover:bg-slate-900/90 transition-all text-xs text-center"
                 >
-                  Comenzar Gratis (Sin Tarjeta)
+                  Comenzar Gratis
+                </a>
+              </div>
+            </div>
+
+            {/* PLAN INICIAL */}
+            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
+              <div>
+                <h3 className="font-display font-bold text-xl text-white mb-2">Inicial</h3>
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1">
+                  {isAnual ? PRICING_DATA.inicial.anual : PRICING_DATA.inicial.semestral}
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
+                    {isAnual ? "/año" : "/semestre"}
+                  </span>
+                </div>
+                <div className="text-[11px] text-slate-400 mb-3">
+                  Equivale a {isAnual ? PRICING_DATA.inicial.mesAnual : PRICING_DATA.inicial.mesSemestral}/mes
+                </div>
+
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Ideal para profesionales independientes con agendamiento constante.
+                </p>
+
+                <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/50 text-[11px] text-slate-300 mb-5 leading-relaxed">
+                  ⚡ Menos de lo que cuesta 1 café al mes.
+                </div>
+
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="font-semibold text-white">1 Profesional / Agenda ilimitada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="font-semibold text-white">Reservas online 24/7 ILIMITADAS</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Presencial, Online y Encargos</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Ficha técnica y notas de clientes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Recordatorios WhatsApp (1 clic)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Gestión de ingresos y gastos</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="text-slate-300 font-medium">Todo lo del Plan Gratis</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <a
+                  href={`https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20Inicial%20(${
+                    isAnual ? "Anual" : "Semestral"
+                  })%20de%20Agenda%20Pro.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-3 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-xs text-center"
+                >
+                  Solicitar Plan Inicial
                 </a>
               </div>
             </div>
 
             {/* PLAN PRO (MÁS POPULAR) */}
-            <div className="relative bg-[#0d2550] border-2 border-blue-500 rounded-3xl p-7 flex flex-col justify-between shadow-[0_0_40px_rgba(37,99,235,0.25)] lg:scale-105 z-10">
+            <div className="relative bg-[#0d2550] border-2 border-blue-500 rounded-3xl p-6 flex flex-col justify-between shadow-[0_0_35px_rgba(37,99,235,0.25)] lg:-translate-y-2 z-10">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase px-3.5 py-1 rounded-full whitespace-nowrap bg-blue-600 text-white shadow-md tracking-wider">
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full whitespace-nowrap bg-blue-600 text-white shadow-md tracking-wider">
                   MÁS POPULAR
                 </span>
               </div>
 
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-2">Pro</h3>
-                <div className="font-display font-extrabold text-4xl text-orange-400 mb-1">
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-orange-400 mb-1">
                   {isAnual ? PRICING_DATA.pro.anual : PRICING_DATA.pro.semestral}
-                  <span className="text-sm font-medium text-slate-400 ml-1">
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
                     {isAnual ? "/año" : "/semestre"}
                   </span>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">
+                <div className="text-[11px] text-slate-400 mb-3">
                   Equivale a {isAnual ? PRICING_DATA.pro.mesAnual : PRICING_DATA.pro.mesSemestral}/mes
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  El más elegido para consultas, centros de estética y equipos en crecimiento.
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  El más elegido para consultas, salones y locales en crecimiento.
                 </p>
 
-                <ul className="space-y-3 mb-8 text-sm">
-                  <li className="flex items-start gap-2.5">
+                <div className="p-2.5 rounded-xl bg-orange-500/15 border border-orange-500/30 text-[11px] font-semibold text-orange-300 mb-5 leading-relaxed">
+                  🔥 Incluye cobro de señas bancarias.
+                </div>
+
+                <ul className="space-y-2.5 mb-6 text-xs">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
                     <span className="text-slate-100 font-semibold">Hasta 3 Profesionales (Multi-agenda)</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100 font-semibold">Recordatorios por WhatsApp automáticos</span>
+                    <span className="text-slate-100 font-semibold">Reservas online 24/7 ILIMITADAS</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">CRM Inteligente de Retención de Clientes</span>
+                    <span className="text-slate-100 font-semibold">Señas bancarias anti no-show</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Fórmulas, notas técnicas e historial</span>
+                    <span className="text-slate-200">Confirmaciones automáticas WhatsApp</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Personalización con tu propio Logo</span>
+                    <span className="text-slate-200">CRM de retención y re-agendamiento</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Estadísticas de ganancias netas y reportes</span>
+                    <span className="text-slate-200">Personalización con tu Logo</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100 font-medium">Todo lo incluido en el Plan Starter</span>
+                    <span className="text-slate-200 font-medium">Todo lo del Plan Inicial</span>
                   </li>
                 </ul>
               </div>
@@ -491,59 +569,63 @@ export default function AgendaProPage() {
                   })%20de%20Agenda%20Pro.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 py-3.5 px-4 font-bold text-white hover:from-blue-500 hover:to-sky-400 shadow-[0_8px_25px_rgba(37,99,235,0.4)] transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 py-3 px-3 font-bold text-white hover:from-blue-500 hover:to-sky-400 shadow-[0_8px_20px_rgba(37,99,235,0.4)] transition-all text-xs text-center"
                 >
-                  Solicitar Plan por WhatsApp
+                  Solicitar Plan Pro
                 </a>
               </div>
             </div>
 
             {/* PLAN PREMIUM */}
-            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
+            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-2">Premium</h3>
-                <div className="font-display font-extrabold text-4xl text-white mb-1">
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1">
                   {isAnual ? PRICING_DATA.premium.anual : PRICING_DATA.premium.semestral}
-                  <span className="text-sm font-medium text-slate-400 ml-1">
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
                     {isAnual ? "/año" : "/semestre"}
                   </span>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">
+                <div className="text-[11px] text-slate-400 mb-3">
                   Equivale a {isAnual ? PRICING_DATA.premium.mesAnual : PRICING_DATA.premium.mesSemestral}/mes
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  La experiencia definitiva. Potencia ilimitada, marca propia y señas anti-inasistencia.
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Control total, marca propia y señas obligatorias para centros con alto flujo.
                 </p>
 
-                <ul className="space-y-3 mb-8 text-sm">
-                  <li className="flex items-start gap-2.5">
+                <div className="p-2.5 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] text-blue-300 mb-5 leading-relaxed">
+                  👑 White-Label y soporte prioritario 24/7.
+                </div>
+
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-100 font-semibold">Profesionales Ilimitados</span>
+                    <span className="text-slate-100 font-semibold">Profesionales y Sillones Ilimitados</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-100 font-semibold">Depósito y Seña obligatoria Anti No-Show</span>
+                    <span className="text-slate-100 font-semibold">Marca Propia (Tu Logo y Nombre)</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Subdominio propio (tumarca.redenlace.cl)</span>
+                    <span>Depósito y Seña obligatoria validada</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">WhatsApp API para confirmación inmediata</span>
+                    <span>Múltiples sucursales o salas</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Notificaciones Push automáticas</span>
+                    <span>Soporte técnico prioritario 24/7</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Soporte técnico prioritario</span>
+                    <span>Exportación contable (Excel / CSV)</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200 font-medium">Todo lo incluido en el Plan Pro</span>
+                    <span className="text-slate-300 font-medium">Todo lo del Plan Pro</span>
                   </li>
                 </ul>
               </div>
@@ -555,9 +637,9 @@ export default function AgendaProPage() {
                   })%20de%20Agenda%20Pro.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-4 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-3 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-xs text-center"
                 >
-                  Solicitar Plan por WhatsApp
+                  Solicitar Plan Premium
                 </a>
               </div>
             </div>

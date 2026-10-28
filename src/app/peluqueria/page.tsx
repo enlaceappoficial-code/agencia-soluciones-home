@@ -51,17 +51,23 @@ const PRICING_DATA = {
     mesSemestral: "$0",
     mesAnual: "$0",
   },
-  plus: {
+  inicial: {
     semestral: "$14.990",
     anual: "$24.990",
     mesSemestral: "$2.499",
     mesAnual: "$2.083",
   },
-  pro: {
+  plus: {
     semestral: "$29.990",
     anual: "$49.990",
     mesSemestral: "$4.999",
     mesAnual: "$4.166",
+  },
+  pro: {
+    semestral: "$49.990",
+    anual: "$89.990",
+    mesSemestral: "$8.331",
+    mesAnual: "$7.499",
   },
 };
 
@@ -334,51 +340,51 @@ export default function PeluqueriaPage() {
             </div>
           </div>
 
-          {/* Grid de los 3 Planes Originales */}
-          <div className="grid md:grid-cols-3 gap-6 items-stretch mt-12">
+          {/* Grid de los 4 Planes */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mt-12">
             {/* PLAN GRATIS */}
-            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
+            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-2">Gratis</h3>
-                <div className="font-display font-extrabold text-4xl text-white mb-1">
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1">
                   $0
-                  <span className="text-sm font-medium text-slate-400 ml-1">
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
                     /para siempre
                   </span>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">
-                  Sin costo mensual ni tarjeta de crédito
+                <div className="text-[11px] text-slate-400 mb-3">
+                  Sin costo mensual ni tarjeta
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
                   Perfecto para barberos independientes que recién comienzan a digitalizarse.
                 </p>
 
                 {/* Banner de bienvenida gratis */}
-                <div className="p-3 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] font-bold text-blue-300 mb-6 leading-relaxed">
-                  🎁 Plan Gratuito para siempre. Empieza hoy sin tarjeta de crédito.
+                <div className="p-2.5 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] font-bold text-blue-300 mb-5 leading-relaxed">
+                  🎁 Plan Gratuito para siempre.
                 </div>
 
-                <ul className="space-y-3 mb-8 text-sm">
-                  <li className="flex items-start gap-2.5">
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">1 Barbero / Agenda única</span>
+                    <span>1 Barbero / Agenda única</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200 font-semibold">Hasta 50 reservas online al mes</span>
+                    <span className="font-semibold text-white">Hasta 30 reservas online al mes</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Link de reservas estándar</span>
+                    <span>Link de reservas estándar</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Ficha técnica de clientes</span>
+                    <span>Ficha técnica de clientes</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
+                  <li className="flex items-start gap-2">
                     <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Ingresos y cierre de caja</span>
+                    <span>Ingresos y cierre de caja</span>
                   </li>
                 </ul>
               </div>
@@ -388,55 +394,133 @@ export default function PeluqueriaPage() {
                   href="https://barberia.redenlace.cl"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-500/50 bg-blue-600/10 hover:bg-blue-600/20 py-3.5 px-4 font-bold text-white transition-all text-sm text-center shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-500/50 bg-blue-600/10 hover:bg-blue-600/20 py-3 px-3 font-bold text-white transition-all text-xs text-center shadow-sm"
                 >
                   Comenzar Gratis (Sin Tarjeta)
                 </a>
               </div>
             </div>
 
-            {/* PLAN PLUS */}
-            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
+            {/* PLAN INICIAL */}
+            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
-                <h3 className="font-display font-bold text-xl text-white mb-2">Plus</h3>
-                <div className="font-display font-extrabold text-4xl text-white mb-1">
-                  {isAnual ? PRICING_DATA.plus.anual : PRICING_DATA.plus.semestral}
-                  <span className="text-sm font-medium text-slate-400 ml-1">
+                <h3 className="font-display font-bold text-xl text-white mb-2">Inicial</h3>
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1">
+                  {isAnual ? PRICING_DATA.inicial.anual : PRICING_DATA.inicial.semestral}
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
                     {isAnual ? "/año" : "/semestre"}
                   </span>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">
+                <div className="text-[11px] text-slate-400 mb-3">
+                  Equivale a {isAnual ? PRICING_DATA.inicial.mesAnual : PRICING_DATA.inicial.mesSemestral}/mes
+                </div>
+
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Para barberos activos que necesitan reservas online sin restricciones.
+                </p>
+
+                <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/50 text-[11px] text-slate-300 mb-5 leading-relaxed">
+                  ⚡ Menos de lo que cuesta 1 corte al año.
+                </div>
+
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="font-semibold text-white">1 Barbero / Agenda ilimitada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="font-semibold text-white">Reservas online 24/7 ILIMITADAS</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Recordatorios por WhatsApp (1 clic)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Ficha técnica y fórmulas de clientes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Control de caja y gastos diarios</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="text-slate-300 font-medium">Todo lo del plan Gratis</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <a
+                  href={`https://wa.me/56941278725?text=Hola!%20Me%20interesa%20solicitar%20el%20Plan%20Inicial%20(${
+                    isAnual ? "Anual" : "Semestral"
+                  })%20de%20Barberia%20Pro.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-3 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-xs text-center"
+                >
+                  Solicitar Plan Inicial
+                </a>
+              </div>
+            </div>
+
+            {/* PLAN PLUS (MÁS POPULAR) */}
+            <div className="relative bg-[#0d2550] border-2 border-blue-500 rounded-3xl p-6 flex flex-col justify-between shadow-[0_0_35px_rgba(37,99,235,0.25)] lg:-translate-y-2 z-10">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full whitespace-nowrap bg-blue-600 text-white shadow-md tracking-wider">
+                  MÁS POPULAR
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-display font-bold text-xl text-white mb-2">Plus</h3>
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-orange-400 mb-1">
+                  {isAnual ? PRICING_DATA.plus.anual : PRICING_DATA.plus.semestral}
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
+                    {isAnual ? "/año" : "/semestre"}
+                  </span>
+                </div>
+                <div className="text-[11px] text-slate-400 mb-3">
                   Equivale a {isAnual ? PRICING_DATA.plus.mesAnual : PRICING_DATA.plus.mesSemestral}/mes
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  Ideal para locales en crecimiento con múltiples sillones.
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Ideal para barberías y salones en crecimiento con múltiples sillones.
                 </p>
 
-                <ul className="space-y-3 mb-8 text-sm">
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Hasta 3 Barberos (Multi-agenda)</span>
+                <div className="p-2.5 rounded-xl bg-orange-500/15 border border-orange-500/30 text-[11px] font-semibold text-orange-300 mb-5 leading-relaxed">
+                  🔥 Incluye cobro de señas anti no-show.
+                </div>
+
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span className="text-slate-100 font-semibold">Hasta 3 Barberos (Multi-agenda)</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200 font-semibold">Reservas online 24/7 ILIMITADAS</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span className="text-slate-100 font-semibold">Reservas online 24/7 ILIMITADAS</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Recordatorios por WhatsApp (1 clic)</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span className="text-slate-100 font-semibold">Señas bancarias anti no-show</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Re-agendamiento rápido (14 días)</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span>Recordatorios por WhatsApp automáticos</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200">Personalización Básica</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span>Re-agendamiento rápido (14 días)</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-blue-400 font-bold">✓</span>
-                    <span className="text-slate-200 font-medium">Todo lo del plan Gratis</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span>Personalización con tu Logo</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-400 font-bold">✓</span>
+                    <span className="text-slate-300 font-medium">Todo lo del plan Inicial</span>
                   </li>
                 </ul>
               </div>
@@ -448,61 +532,63 @@ export default function PeluqueriaPage() {
                   })%20de%20Barberia%20Pro.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-4 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 py-3 px-3 font-bold text-white hover:from-blue-500 hover:to-sky-400 shadow-[0_8px_20px_rgba(37,99,235,0.4)] transition-all text-xs text-center"
                 >
-                  Solicitar Plan por WhatsApp
+                  Solicitar Plan Plus
                 </a>
               </div>
             </div>
 
-            {/* PLAN PRO (MÁS POPULAR) */}
-            <div className="relative bg-[#0d2550] border-2 border-blue-500 rounded-3xl p-7 flex flex-col justify-between shadow-[0_0_40px_rgba(37,99,235,0.25)] lg:scale-105 z-10">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase px-3.5 py-1 rounded-full whitespace-nowrap bg-blue-600 text-white shadow-md tracking-wider">
-                  MÁS POPULAR
-                </span>
-              </div>
-
+            {/* PLAN PRO */}
+            <div className="relative bg-[#0d2550] border border-blue-900/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 shadow-lg">
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-2">Pro</h3>
-                <div className="font-display font-extrabold text-4xl text-orange-400 mb-1">
+                <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1">
                   {isAnual ? PRICING_DATA.pro.anual : PRICING_DATA.pro.semestral}
-                  <span className="text-sm font-medium text-slate-400 ml-1">
+                  <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1">
                     {isAnual ? "/año" : "/semestre"}
                   </span>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">
+                <div className="text-[11px] text-slate-400 mb-3">
                   Equivale a {isAnual ? PRICING_DATA.pro.mesAnual : PRICING_DATA.pro.mesSemestral}/mes
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
                   La experiencia definitiva. Control total y marca propia (White-Label).
                 </p>
 
-                <ul className="space-y-3 mb-8 text-sm">
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100 font-semibold">Barberos Ilimitados</span>
+                <div className="p-2.5 rounded-xl bg-blue-600/15 border border-blue-500/30 text-[11px] text-blue-300 mb-5 leading-relaxed">
+                  👑 White-Label y soporte prioritario 24/7.
+                </div>
+
+                <ul className="space-y-2.5 mb-6 text-xs text-slate-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="text-slate-100 font-semibold">Barberos y Sillones Ilimitados</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-orange-400 font-bold">✓</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
                     <span className="text-slate-100 font-semibold">Marca Propia (Tu Logo y Nombre)</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Cobro de Señas / Anti No-Show</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Cobro de Señas / Anti No-Show obligatorio</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Cálculo de Rentabilidad y Gastos</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Cálculo de Rentabilidad y Gastos Fijos</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Estadísticas avanzadas y Reportes</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Estadísticas avanzadas y Reportes</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-orange-400 font-bold">✓</span>
-                    <span className="text-slate-100">Soporte técnico prioritario</span>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span>Soporte técnico prioritario 24/7</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">✓</span>
+                    <span className="text-slate-300 font-medium">Todo lo del plan Plus</span>
                   </li>
                 </ul>
               </div>
@@ -514,9 +600,9 @@ export default function PeluqueriaPage() {
                   })%20de%20Barberia%20Pro.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 py-3.5 px-4 font-bold text-white hover:from-blue-500 hover:to-blue-400 shadow-[0_8px_25px_rgba(37,99,235,0.4)] transition-all text-sm text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-blue-800/80 bg-slate-900/60 py-3 px-3 font-semibold text-slate-100 hover:border-orange-500/50 hover:bg-slate-900/90 transition-all text-xs text-center"
                 >
-                  Solicitar Plan por WhatsApp
+                  Solicitar Plan Pro
                 </a>
               </div>
             </div>
